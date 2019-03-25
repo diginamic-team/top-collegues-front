@@ -1,14 +1,25 @@
 {
+<<<<<<< HEAD
   "name": "demo",
+=======
+  "name": "top-collegues-front",
+>>>>>>> initial commit
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+<<<<<<< HEAD
     "build": "ng build --prod --base-href https://Ferilias.github.io/top-collegues-front/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
     
+=======
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+>>>>>>> initial commit
   },
   "private": true,
   "dependencies": {
