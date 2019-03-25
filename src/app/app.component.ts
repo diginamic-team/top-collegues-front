@@ -6,9 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-<<<<<<< HEAD
-  title = 'demo';
-=======
   title = 'top-collegues-front';
->>>>>>> initial commit
 }

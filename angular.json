@@ -3,18 +3,14 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-<<<<<<< HEAD
-    "demo": {
-=======
+
     "top-collegues-front": {
->>>>>>> initial commit
+
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-<<<<<<< HEAD
-      "schematics": {},
-=======
+
       "schematics": {
         "@schematics/angular:class": {
           "skipTests": true
@@ -38,16 +34,13 @@
           "skipTests": true
         }
       },
->>>>>>> initial commit
+
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-<<<<<<< HEAD
-            "outputPath": "dist/demo",
-=======
+
             "outputPath": "dist/top-collegues-front",
->>>>>>> initial commit
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -92,30 +85,20 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-<<<<<<< HEAD
-            "browserTarget": "demo:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "demo:build:production"
-=======
+
             "browserTarget": "top-collegues-front:build"
           },
           "configurations": {
             "production": {
               "browserTarget": "top-collegues-front:build:production"
->>>>>>> initial commit
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-<<<<<<< HEAD
-            "browserTarget": "demo:build"
-=======
+
             "browserTarget": "top-collegues-front:build"
->>>>>>> initial commit
           }
         },
         "test": {
@@ -149,11 +132,8 @@
         }
       }
     },
-<<<<<<< HEAD
-    "demo-e2e": {
-=======
+
     "top-collegues-front-e2e": {
->>>>>>> initial commit
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -162,19 +142,12 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-<<<<<<< HEAD
-            "devServerTarget": "demo:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "demo:serve:production"
-=======
+
             "devServerTarget": "top-collegues-front:serve"
           },
           "configurations": {
             "production": {
               "devServerTarget": "top-collegues-front:serve:production"
->>>>>>> initial commit
             }
           }
         },
@@ -190,9 +163,6 @@
       }
     }
   },
-<<<<<<< HEAD
-  "defaultProject": "demo"
-=======
+
   "defaultProject": "top-collegues-front"
->>>>>>> initial commit
 }
