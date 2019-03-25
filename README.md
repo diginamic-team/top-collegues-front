@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+
+[![Build Status](https://travis-ci.org/anisskiller/top-collegues-front.svg?branch=master)](https://travis-ci.org/anisskiller/top-collegues-front)
+
+
 # top-collegues-front
 =======
 # TopColleguesFront
