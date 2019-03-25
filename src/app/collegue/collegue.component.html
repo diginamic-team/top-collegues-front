@@ -1,0 +1,5 @@
+<img src="{{col.photoUrl}}">
+
+<p>{{col.pseudo}}</p>
+<p>{{col.score}}</p>
+<app-avis (change)=avisTraiterEmis($event) [hideAimer]="hideAimer" [hideDetester]="hideDetester"></app-avis>
