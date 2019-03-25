@@ -29,4 +29,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 [![Build Status](https://travis-ci.org/MelPichery/top-collegues-front.svg?branch=master)](https://travis-ci.org/MelPichery/top-collegues-front)
 
-http://melpichery_github.github.io/top-collegues-front
+http://melpichery.github.io/top-collegues-front
