@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Delteil/top-collegues-front.svg?branch=master)](https://travis-ci.org/Delteil/top-collegues-front)
+
 # TopColleguesFront
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
