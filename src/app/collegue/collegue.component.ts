@@ -21,14 +21,14 @@ export class CollegueComponent implements OnInit {
       if(this.col.score >=1000){
         this.hideAimer= true;
       }else{
-        this.hideAimer = false;
+        this.hideDetester= false;
       }
     }else if(unAvis == Avis.DETESTER){
       this.col.score -=300;
       if(this.col.score <=-1000){
         this.hideDetester= true;
       }else{
-        this.hideDetester= false;
+        this.hideAimer = false;
       }
     }
   }
