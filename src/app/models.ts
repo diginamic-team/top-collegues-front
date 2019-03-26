@@ -34,3 +34,10 @@ export const listeCollegue: Collegue[] = [
     photoUrl: 'https://figurinepop.com/public/puss1_2.jpg',
   },
 ];
+
+export interface Vote {
+
+  collegue: Collegue;
+  avis: Avis;
+
+}

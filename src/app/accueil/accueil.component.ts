@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, CollectionChangeRecord } from '@angular/core';
-import { Collegue, listeCollegue } from '../models';
+import { Collegue, Vote } from '../models';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-accueil',
@@ -8,9 +9,11 @@ import { Collegue, listeCollegue } from '../models';
 })
 export class AccueilComponent implements OnInit {
 
-  listeCollegue: Collegue[] = listeCollegue;
+  listeCollegue: Collegue[];
 
-  constructor() { }
+  constructor(private dataService: DataService) {
+    this.listeCollegue = this.dataService.lister();
+  }
 
   ngOnInit() {
   }

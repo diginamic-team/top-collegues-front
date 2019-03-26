@@ -1,0 +1,9 @@
+<H2>Historique</H2>
+
+<div *ngFor="let vote of listeVote">
+
+    <img [src]="vote.collegue.photoUrl" />
+    <p>{{vote.collegue.pseudo}}</p>
+    <p>{{vote.collegue.score}}</p>
+
+</div>

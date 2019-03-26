@@ -1,4 +1,4 @@
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -8,6 +8,7 @@ import { CollegueComponent } from './collegue/collegue.component';
 import { ListeCollegueComponent } from './liste-collegue/liste-collegue.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ScorePipe } from './pipes/score.pipe';
+import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ScorePipe } from './pipes/score.pipe';
     CollegueComponent,
     ListeCollegueComponent,
     AccueilComponent,
-    ScorePipe
+    ScorePipe,
+    HistoriqueVotesComponent
   ],
   imports: [
     BrowserModule, NgbModule
