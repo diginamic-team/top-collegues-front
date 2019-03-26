@@ -17,14 +17,14 @@ export class CollegueComponent implements OnInit {
   }
   avisTraiterEmis(unAvis: Avis){
     if (unAvis == Avis.AIMER){
-      this.col.score += 200;
+      this.col.score += 100;
       if(this.col.score >=1000){
         this.hideAimer= true;
       }else{
         this.hideDetester= false;
       }
     }else if(unAvis == Avis.DETESTER){
-      this.col.score -=300;
+      this.col.score -=100;
       if(this.col.score <=-1000){
         this.hideDetester= true;
       }else{

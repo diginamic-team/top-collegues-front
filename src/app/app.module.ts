@@ -5,6 +5,9 @@ import { BonjourComponent } from './bonjour/bonjour.component';
 import { BonjourAvecPrenomComponent } from './bonjour-avec-prenom/bonjour-avec-prenom.component';
 import { CollegueComponent } from './collegue/collegue.component';
 import { AvisComponent } from './avis/avis.component';
+import { ListeColleguesComponent } from './liste-collegues/liste-collegues.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { ScorePipe } from './pipes/score.pipe';
 
 @NgModule({
   declarations: [
@@ -12,7 +15,10 @@ import { AvisComponent } from './avis/avis.component';
     BonjourComponent,
     BonjourAvecPrenomComponent,
     CollegueComponent,
-    AvisComponent
+    AvisComponent,
+    ListeColleguesComponent,
+    AccueilComponent,
+    ScorePipe
   ],
   imports: [
     BrowserModule
