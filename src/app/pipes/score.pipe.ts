@@ -5,8 +5,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ScorePipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return null;
+  transform(scoreVal: number, args?: any): any {
+    if (scoreVal<0){
+      return `- ${Math.abs(scoreVal)}`
+    } else if (scoreVal>0){
+      return `+ ${scoreVal}`};    
   }
-
 }

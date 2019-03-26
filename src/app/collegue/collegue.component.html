@@ -2,6 +2,6 @@
  <div class="row align-self-center"></div>
     <img class="align-self-center" style="width: 400px; height: 350px " src="{{col.photoUrl}}">
     <p class="align-self-center">{{col.pseudo}}</p>
-    <p class="align-self-center">{{col.score}}</p>
+    <p class="align-self-center">{{col.score | score}}</p>
    <p class="align-self-center"><app-avis (change)=avisTraiterEmis($event) [hideAimer]="hideAimer" [hideDetester]="hideDetester"></app-avis></p> 
 </div>
