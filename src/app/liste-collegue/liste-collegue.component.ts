@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {Collegue } from '../models';
 
 @Component({
   selector: 'app-liste-collegue',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./liste-collegue.component.css']
 })
 export class ListeCollegueComponent implements OnInit {
+
+  @Input() liste: Collegue[];
 
   constructor() { }
 

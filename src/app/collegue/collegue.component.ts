@@ -12,24 +12,21 @@ export class CollegueComponent implements OnInit {
 
   avisEmis(avis: Avis) {
 
-    if (avis == Avis.AIME) {
+    if (avis === Avis.AIME) {
       this.col.score++;
       // this.col.score += 1;
       // if (this.col.score >= 5) {
       //   this.desactive = true;
       // }
 
-    } else if (avis == Avis.DETESTE) {
+    } else if (avis === Avis.DETESTE) {
       this.col.score--;
       // this.col.score -= 1;
-      // if (this.col.score <= 5) {
+      // if (this.col.score <= 5)
       //   desactive = true;
       // }
     }
   }
-
-
-
 
   constructor() { }
 

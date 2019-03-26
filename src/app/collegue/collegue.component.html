@@ -1,11 +1,15 @@
-<!-- syntax angular -->
-<img [src]="col.photoUrl" />
+<div style="align-content: center;">
 
-<!-- syntax html -->
-<!-- <img src= {{col.photoUrl}}/>  -->
+  <!-- syntax angular -->
+  <img [src]="col.photoUrl" />
 
-<p>{{col.pseudo}}</p>
+  <!-- syntax html -->
+  <!-- <img src= {{col.photoUrl}}/>  -->
 
-<p>{{col.score}}</p>
+  <p>{{col.pseudo | uppercase}}</p>
 
-<app-avis (add)=avisEmis($event)></app-avis>
+  <p>{{col.score | score }} </p>
+
+  <app-avis (add)=avisEmis($event)></app-avis>
+
+</div>
