@@ -1,8 +1,18 @@
-<img [src]='col.imageURL'>
-<div class="row justify-content-md-center" id="score">
-<p class="align-self-center">{{col.score}}</p>
-<span><img id="picto-coeur" src="https://www.parentepuise.com/wp-content/uploads/2017/03/picto-coeur.svg" alt="">
-</span>
+<div class="border perso">
+<div>
+  <h1 >{{col.pseudo}}</h1>
+</div>
+
+<img class="image-pseudo" [src]='col.imageURL'>
+
+<div id="score">
+
+  <h4>{{col.score | score }}</h4>
+
+
+    <img id="picto-coeur" src="https://www.parentepuise.com/wp-content/uploads/2017/03/picto-coeur.svg" alt="">
 
 </div>
-<app-avis (avisEmis)="traiterAvisEmis($event)"></app-avis>
+
+<app-avis style="text-align: center" (avisEmis)="traiterAvisEmis($event)"></app-avis>
+</div>

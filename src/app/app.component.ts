@@ -15,3 +15,5 @@ export class AppComponent {
     imageURL:"https://media.giphy.com/media/SwWrhzXVM7NdK/giphy.gif"
   }
 }
+
+

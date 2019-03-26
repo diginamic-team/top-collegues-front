@@ -1,11 +1,33 @@
 #picto-coeur{
     height:50px;
+    margin-left:20px;
 }
 
 #score{
     padding-top:20px;
+    text-align: center;
+}
+.image-pseudo{
+  height: 300px ;
+  width: 400px;
 }
 
+h1{
+  padding-top:15px;
+  padding-bottom:15px;
+  text-align: center;
+}
+
+h4{
+  display: inline-block;
+}
+
+.perso{
+  padding: 15px;
+  margin: 25px;
+  display:inline-block;
+  text-align: center;
+}
 
 
 
