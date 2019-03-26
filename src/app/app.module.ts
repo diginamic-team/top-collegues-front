@@ -4,12 +4,18 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AvisComponent } from './avis/avis.component';
 import { CollegueComponent } from './collegue/collegue.component';
+import { ListeColleguesComponentComponent } from './liste-collegues-component/liste-collegues-component.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { ScorePipe } from './pipes/score.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     AvisComponent,
-    CollegueComponent
+    CollegueComponent,
+    ListeColleguesComponentComponent,
+    AccueilComponent,
+    ScorePipe
   ],
   imports: [
     BrowserModule
