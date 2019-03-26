@@ -9,6 +9,9 @@ export class ScorePipe implements PipeTransform {
     if (scoreVal<0){
       return `- ${Math.abs(scoreVal)}`
     } else if (scoreVal>0){
-      return `+ ${scoreVal}`};    
+      return `+ ${scoreVal}`}
+      else{
+        return 'Tu es comme les Suisses !!!'
+      };    
   }
 }

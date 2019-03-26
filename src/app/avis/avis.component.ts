@@ -5,7 +5,7 @@ import {
   EventEmitter,
   Input,
 } from '@angular/core';
-import { Avis, Collegue } from '../models';
+import { Avis } from '../models';
 
 @Component({
   selector: 'app-avis',
@@ -24,11 +24,9 @@ export class AvisComponent implements OnInit {
    @Output() change:EventEmitter<number> = new EventEmitter<number>();
 
     quandOnAimer() {
-        console.log('AIMER!')
         this.change.emit(Avis.AIMER);
     }
   quandOnDetester() {
-    console.log('DETESTER!')
     this.change.emit(Avis.DETESTER);
   
   }

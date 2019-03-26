@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Collegue, Avis } from '../models';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-collegue',
@@ -8,28 +9,29 @@ import { Collegue, Avis } from '../models';
 })
 export class CollegueComponent implements OnInit {
   @Input() col: Collegue;
-
   hideAimer: boolean =false;
   hideDetester: boolean =false;
-  constructor() { }
+  constructor(private _DateService:DataService) { }
 
   ngOnInit() {
   }
   avisTraiterEmis(unAvis: Avis){
-    if (unAvis == Avis.AIMER){
-      this.col.score += 100;
+    this.col.score = this._DateService.donnerUnAvis(this.col, unAvis).score;
+    this.disable()
+  }
+  disable(){
       if(this.col.score >=1000){
         this.hideAimer= true;
       }else{
-        this.hideDetester= false;
+        this.hideAimer= false;
       }
-    }else if(unAvis == Avis.DETESTER){
-      this.col.score -=100;
       if(this.col.score <=-1000){
-        this.hideDetester= true;
-      }else{
-        this.hideAimer = false;
-      }
-    }
+        this.hideDetester= true;}
+        else{
+          this.hideDetester = false;
+
+        }
+  
   }
+
 }
