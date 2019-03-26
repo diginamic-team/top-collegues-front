@@ -7,6 +7,7 @@ import { CollegueComponent } from './collegue/collegue.component';
 import { ListeColleguesComponentComponent } from './liste-collegues-component/liste-collegues-component.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ScorePipe } from './pipes/score.pipe';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ScorePipe } from './pipes/score.pipe';
     ScorePipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

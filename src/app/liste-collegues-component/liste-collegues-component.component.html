@@ -1,4 +1,8 @@
 <h1>Itération</h1>
         <ul>
-            <ol *ngFor="let col of collegues"><app-collegue [col]=col></app-collegue></ol>
+            <ol *ngFor="let col of collegues | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize"><app-collegue [col]=col></app-collegue></ol>
         </ul>
+        <ngb-pagination
+        [(page)]="page"
+        [pageSize]="pageSize"
+        [collectionSize]="collegues.length"></ngb-pagination>
