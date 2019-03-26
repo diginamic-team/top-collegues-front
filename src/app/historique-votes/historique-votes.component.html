@@ -1,0 +1,14 @@
+
+<ul>
+  <ol *ngFor="let v of votes">
+    <div>
+      <img [src]="v.collegue.imageUrl" height=120px>
+      <div style="display: inline-block">
+        <p>{{v.collegue.pseudo |  uppercase}}</p>
+        <p>{{v.collegue.score | score}}</p>
+        <p>{{v.avis}}</p>
+        <button>Supprimer</button>
+      </div>
+    </div>
+  </ol>
+</ul>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Collegue, Avis } from '../models';
+import { DataService } from '../services/data.service';
 
 
 @Component({
@@ -12,8 +13,8 @@ export class CollegueComponent implements OnInit {
 
   @Input() col: Collegue;
 
-  constructor() { 
-    
+  constructor(private _serviceAvis: DataService) {
+
 
   }
 
@@ -22,11 +23,9 @@ export class CollegueComponent implements OnInit {
 
   traiterAvis(unAvis:Avis){
 
-    if(unAvis === Avis.AIMER ){
-      this.col.score += 50;
-    }else if(unAvis === Avis.DETESTER){
-      this.col.score -= 80;
-    }
+    const colAJ = this._serviceAvis.donnerUnAvis(this.col, unAvis);
+
+    this.col.score = colAJ.score;
 
   }
 

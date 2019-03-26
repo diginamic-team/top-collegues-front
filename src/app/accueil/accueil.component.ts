@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Collegue } from '../models';
+import { Collegue, Avis } from '../models';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-accueil',
@@ -8,11 +9,15 @@ import { Collegue } from '../models';
 })
 export class AccueilComponent implements OnInit {
 
-  @Input() collegues: Collegue[];
+  collegues:Collegue[];
 
-  constructor() { }
+  constructor(private _serviceAvis: DataService) {
+
+   }
 
   ngOnInit() {
+    this.collegues = this._serviceAvis.lister();
   }
+
 
 }
