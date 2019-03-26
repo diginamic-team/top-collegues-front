@@ -1,0 +1,19 @@
+<p>
+  avis works!
+</p>
+
+
+<button type="button" class="btn btn-success">J'aime</button>
+
+<button type="button" class="btn btn-danger">Je déteste</button>
+
+
+<button (click)="jaime()">J'aime</button>
+<button (click)="jedeteste()">Je déteste</button>
+
+
+
+<button type="button" [disabled] ="outLove" class="btn btn-success" (click)="AvisLove()">J'aime</button> <button type="button"
+    class="btn btn-danger" [disabled] ="outHate" (click)="AvisOutHate()">Je déteste</button>
+    <p>outLove : {{outLove}}</p>
+    <p>outHate : {{outHate}}</p>

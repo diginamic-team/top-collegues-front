@@ -1,0 +1,11 @@
+<p>
+  collegue works!
+</p>
+
+
+<img [src] = "col.imageUrl">
+<!-- <img src = "{{col.imageUrl}}">  -->
+
+<p>{{col.pseudo}}</p>
+<p>{{col.score}}</p>
+<app-avis (change)="avis($event)" [outHate] = "outHate"  [outLove] ="outLove"></app-avis>
