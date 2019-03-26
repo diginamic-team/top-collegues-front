@@ -9,7 +9,7 @@ import { Collegue } from '../model';
   styleUrls: ['./liste-collegues-component.component.css']
 })
 export class ListeColleguesComponentComponent implements OnInit {
-  @Input() liste:Collegue[];
+  @Input() liste: Collegue [];
   constructor() { }
 
   ngOnInit() {

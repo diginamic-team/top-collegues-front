@@ -14,8 +14,9 @@ import { ScorePipe } from './pipes/score.pipe';
 @NgModule({
 
   declarations: [
-    AppComponent,  AvisComponent, CollegueComponent, ListeColleguesComponentComponent, AccueilComponentComponent, ScorePipe, PaginationComponent
+    AppComponent,  AvisComponent, CollegueComponent, ListeColleguesComponentComponent, AccueilComponentComponent, ScorePipe,
   ],
+  imports: [BrowserModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Avis, Collegue } from '../model';
+/*import { Injectable } from '@angular/core';
+import { Collegue } from '../model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +12,11 @@ listeCollegues: Collegue[] = []
 constructor() { }
 
 lister(): Collegue[]  {
-  // TODO retourner une liste fictives de collègues
+  liste:Collegue[];
 }
 
 donnerUnAvis(collegue: Collegue, avis: Avis): Collegue  {
   // TODO mettre à jour le score du collègue et retourner le collègue à jour
 }
 
-}
+}*/
