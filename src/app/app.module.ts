@@ -3,10 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { AvisComponent } from './avis/avis.component';
+import { CollegueComponent } from './collegue/collegue.component';
+import { ListeCollegueComponent } from './liste-collegue/liste-collegue.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AvisComponent,
+    CollegueComponent,
+    ListeCollegueComponent
   ],
   imports: [
     BrowserModule, NgbModule
