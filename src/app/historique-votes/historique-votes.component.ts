@@ -16,4 +16,8 @@ export class HistoriqueVotesComponent implements OnInit {
     this.listeVotes = this.data.listerVotes();
   }
 
+  delete(index) {
+    console.log(index);
+    this.listeVotes.splice(index, 1 ) ;
+  }
 }
