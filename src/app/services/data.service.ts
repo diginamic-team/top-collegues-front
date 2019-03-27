@@ -21,7 +21,7 @@ export class DataService {
 
   donnerUnAvis(collegue: Collegue, a: Avis): Collegue  {
     // TODO mettre à jour le score du collègue et retourner le collègue à jour 
-    if (Avis.AIMER === a && collegue.score < 200) {
+    if (Avis.AIMER === a) {
       collegue.score += 100;
     } else if (Avis.DETESTER === a && collegue.score > -100) {
       collegue.score -= 100;

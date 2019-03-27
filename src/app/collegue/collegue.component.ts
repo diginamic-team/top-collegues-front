@@ -25,13 +25,13 @@ export class CollegueComponent implements OnInit {
   }
 
   check(a: Avis): void {
-    if (Avis.AIMER === a && this.col.score < 200) {
+    if (Avis.AIMER === a && this.col.score < 40000000000000) {
       this.col.score = this.data.donnerUnAvis(this.col, a ).score;
       this.dislikeActivated = true;
-      if (this.col.score === 200) {
+      if (this.col.score === 400000000000000000) {
         this.likeActivated = false;
       }
-    } else if (Avis.DETESTER === a && this.col.score > 100) {
+    } else if (Avis.DETESTER === a) {
       this.col.score = this.data.donnerUnAvis(this.col, a).score;
       this.likeActivated = true;
       if (this.col.score === -100) {
