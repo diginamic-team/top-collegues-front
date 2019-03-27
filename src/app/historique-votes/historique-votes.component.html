@@ -3,6 +3,6 @@
 </nav>
 <div *ngFor="let item of listeVotes">
   <p>{{item.collegue.pseudo}}</p>
-  <p><img [src]="item.collegue.photo" alt="Smiley face" height="50" width="42"> {{item.collegue.pseudo}} est {{avis[item.avis] | lowercase}} son score : {{item.collegue.score}}</p>
+  <p><img [src]="item.collegue.photoUrl" height="50" width="42"> {{item.collegue.pseudo}} est {{avis[item.avis] | lowercase}} son score : {{item.collegue.score}}</p>
   <button>Remove le</button>
 </div>
