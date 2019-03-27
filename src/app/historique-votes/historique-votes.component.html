@@ -1,0 +1,12 @@
+    <h3>Historique</h3>
+
+  <div class="border vignette-collegue-historique" style="padding: 15px" *ngFor="let item of listeVotes">
+    <h4>{{item.collegue.pseudo}}</h4>
+    <span>
+    <img class="img-historique" [src]="item.collegue.imageURL" alt="image-pseudo">
+
+  </span>
+  <div>
+{{item.collegue.pseudo}} est à {{item.collegue.score}} points
+  <button class="btn btn-secondary bouton-supprimer">Supprimer</button></div>
+  </div>

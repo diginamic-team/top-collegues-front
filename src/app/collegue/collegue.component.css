@@ -9,7 +9,6 @@
 }
 .image-pseudo{
   height: 300px ;
-  width: 400px;
 }
 
 h1{
@@ -25,8 +24,6 @@ h4{
 .perso{
   padding: 15px;
   margin: 25px;
-  display:inline-block;
-  text-align: center;
 }
 
 

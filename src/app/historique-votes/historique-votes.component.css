@@ -1,0 +1,15 @@
+.img-historique{
+  height: 100px;
+  width: 170px;
+}
+
+.vignette-collegue-historique{
+  padding:20px;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+.bouton-supprimer{
+  display: flex;
+  margin-top:15px;
+}

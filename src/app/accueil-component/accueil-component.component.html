@@ -1,16 +1,23 @@
+<div class="text-right bouton-rafraichir">
+    <button onclick="javascript:location.reload();" class="btn btn-info">Rafraichir</button>
+  </div>
 
-
-<div class='container'>
-<div class="row justify-content-md-center">
+  <div class='container-fluid'>
+  <div class="row justify-content-md-center">
 
     <h1>Liste des employés</h1>
 
-</div >
-<div class="text-right">
-<button onclick="javascript:location.reload();" class="btn btn-info">Rafraichir</button></div>
-</div>
-      <div class="row justify-content-md-center" >
+  </div>
 
-        <app-liste-collegues-component [liste]="liste"></app-liste-collegues-component>
+
+
+<div class="row justify-content-md-center">
+    <div class="col-10 ">
+  <app-liste-collegues-component [liste]="liste"></app-liste-collegues-component>
 </div>
+
+<div class="col-2 col-auto">
+    <app-historique-votes></app-historique-votes>
+  </div>
+  </div></div>
 
