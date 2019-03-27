@@ -6,7 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ScorePipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    return null;
+    if (value > 0) {
+      return `+ ${value}`;
+    } else if (value < 0) {
+      return ` ${value}`;
+    }
   }
 
 }

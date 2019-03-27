@@ -1,11 +1,6 @@
-<p>
-  collegue works!
-</p>
+<img [src] = "col.photoUrl">
 
-
-<img [src] = "col.imageUrl">
-<!-- <img src = "{{col.imageUrl}}">  -->
-
-<p>{{col.pseudo}}</p>
-<p>{{col.score}}</p>
-<app-avis (change)="avis($event)" [outHate] = "outHate"  [outLove] ="outLove"></app-avis>
+<p>{{col.pseudo | uppercase}}</p>
+<p>{{col.score | score}}</p> 
+<!-- <p> <img src="http://pluspng.com/img-png/png-coeur-rose-click-to-enlarge-479.png" height="20" width="20"></p> -->
+<app-avis (change)="check($event)" [likeActivated] = "likeActivated"  [dislikeActivated] ="dislikeActivated"></app-avis>

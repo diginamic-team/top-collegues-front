@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Collegue } from '../models';
+import { Collegue, Avis } from '../models';
+import { DataService } from '../services/data.service';
+
 import { AvisComponent } from '../avis/avis.component';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
@@ -11,50 +13,32 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 export class CollegueComponent implements OnInit {
 
   @Input() col: Collegue;
-  outLove: boolean = false;
-  outHate: boolean = false;
+  likeActivated: boolean;
+  dislikeActivated: boolean;
 
-  constructor() { }
+  constructor(private data: DataService) { 
+    this.likeActivated = true; 
+    this.dislikeActivated = true;
+  }
 
   ngOnInit() {
   }
 
-  traiterAvisEmis(unAvis: Avis) {
-    if(unAvis == Avis.AIMER) {
-      this.col.score += 200;
-    } else if (unAvis == AvisComponent.DETESTER) {
-      this.col.score -= 300;
+  check(a: Avis): void {
+    if (Avis.AIMER === a && this.col.score < 200) {
+      this.col.score = this.data.donnerUnAvis(this.col, a ).score;
+      this.dislikeActivated = true;
+      if (this.col.score === 200) {
+        this.likeActivated = false;
+      }
+    } else if (Avis.DETESTER === a && this.col.score > 100) {
+      this.col.score = this.data.donnerUnAvis(this.col, a).score;
+      this.likeActivated = true;
+      if (this.col.score === -100) {
+        this.dislikeActivated = false;
+      }
     }
   }
 
-  avis(unAvis: Avis) {
-    if(unAvis == Avis.AIMER){
-      this.col.score += 100;
-      if (this.c.score >=1000){
-        this.outLove = true
-      }else{
-        this.outLove = false
-      }
-      if (this.col.score <= -1000) {
-        this.outHate = true
-      } else {
-        this.outHate = false;
-      }
-   
-    }else{
-      this.col.score -= 100;
-      if (this.col.score <= -1000) {
-        this.outHate = true
-      } else {
-        this.outHate = false;
-      } if (this.c.score >= 1000) {
-        this.outLove = true
-      } else {
-        this.outLove = false
-      }
-      console.log("jaime pas")
-    }
-
-  }
 
 }

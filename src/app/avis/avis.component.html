@@ -1,19 +1,5 @@
-<p>
-  avis works!
-</p>
+<div>
+  <button class="btn btn-primary" (click)=avis(Avis.AIMER) [disabled]="!likeActivated">Aimer jusqu'à l'impossibleeeeeeeuh</button>
+  <button class="btn btn-danger" (click)=avis(Avis.DETESTER) [disabled]="!dislikeActivated">Je l'aime pas lui</button>
 
-
-<button type="button" class="btn btn-success">J'aime</button>
-
-<button type="button" class="btn btn-danger">Je déteste</button>
-
-
-<button (click)="jaime()">J'aime</button>
-<button (click)="jedeteste()">Je déteste</button>
-
-
-
-<button type="button" [disabled] ="outLove" class="btn btn-success" (click)="AvisLove()">J'aime</button> <button type="button"
-    class="btn btn-danger" [disabled] ="outHate" (click)="AvisOutHate()">Je déteste</button>
-    <p>outLove : {{outLove}}</p>
-    <p>outHate : {{outHate}}</p>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Avis } from '../models';
 
 @Component({
@@ -8,19 +8,16 @@ import { Avis } from '../models';
 })
 export class AvisComponent implements OnInit {
   @Output() change: EventEmitter<Avis> = new EventEmitter<Avis>();
-  @Input() outLove :boolean;
-  @Input() outHate: boolean;
+  @Input() dislikeActivated;
+  @Input() likeActivated;
+  Avis = Avis;
+  avis(s: Avis) {
+    this.change.emit(s);
+  }
   constructor() { }
 
   ngOnInit() {
   }
 
-  outLove(){
-   this.change.emit(Avis.AIMER);
-  }
-
-  outHate() {
-   this.change.emit(Avis.DETESTER);
-  }
 
 }
