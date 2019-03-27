@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Collegue, Avis, listeCollegue, Vote } from '../models';
-import { CollegueComponent } from '../collegue/collegue.component';
+import { Observable, of, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,36 +9,38 @@ export class DataService {
 
   // TODO alimenter la liste de collègues
   listeCollegue: Collegue[] = listeCollegue;
+  // création d'une instance de Subject
+  // le subject est privé, seul le service DataService peut émettre une valeur
+  private listeVote = new Subject<Vote>();
 
   constructor() { }
 
-  lister(): Collegue[] {
+  lister(): Observable<Collegue[]> {
     // TODO retourner une liste fictives de collègues
-    return this.listeCollegue;
+    // utiliser la fonction `of`
+    return of(this.listeCollegue);
   }
 
-  donnerUnAvis(collegue: Collegue, avis: Avis): Collegue {
+  donnerUnAvis(collegue: Collegue, avis: Avis): Observable<Collegue> {
     // TODO mettre à jour le score du collègue et retourner le collègue à jour
+    // utiliser la fonction `of`
     if (avis === Avis.AIME) {
       collegue.score++;
     } else if (avis === Avis.DETESTE) {
       collegue.score--;
     }
-    return collegue;
+    this.listeVote.next({
+      collegue, avis
+    });
+    return of(collegue);
   }
 
   // TODO alimenter la liste de votes
   // Référencer un objet Collegue comme suit : `this.listeCollegues[0]`
 
-  private listeVote: Vote[] = [
-    { collegue: this.listeCollegue[0], avis: Avis.AIME },
-    { collegue: this.listeCollegue[1], avis: Avis.DETESTE },
-    { collegue: this.listeCollegue[2], avis: Avis.AIME },
-  ];
-
-  listerVotes(): Vote[] {
+  listerVotes(): Observable<Vote> {
     // TODO retourner la liste des votes.
-    return this.listeVote;
+    return this.listeVote.asObservable();
   }
 
 }

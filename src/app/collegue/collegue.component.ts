@@ -14,14 +14,14 @@ export class CollegueComponent implements OnInit {
   avisEmis(avis: Avis) {
 
     if (avis === Avis.AIME) {
-      this.col.score = this._dataService.donnerUnAvis(this.col, avis).score;
+      this.dataService.donnerUnAvis(this.col, avis).subscribe(collegue => this.col = collegue);
       // this.col.score += 1;
       // if (this.col.score >= 5) {
       //   this.desactive = true;
       // }
 
     } else if (avis === Avis.DETESTE) {
-      this.col.score = this._dataService.donnerUnAvis(this.col, avis).score;
+      this.dataService.donnerUnAvis(this.col, avis).subscribe(collegue => this.col = collegue);
       // this.col.score -= 1;
       // if (this.col.score <= 5)
       //   desactive = true;
@@ -29,7 +29,7 @@ export class CollegueComponent implements OnInit {
     }
   }
 
-  constructor(private _dataService: DataService) {
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit() {

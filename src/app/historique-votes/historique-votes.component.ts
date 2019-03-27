@@ -13,7 +13,6 @@ export class HistoriqueVotesComponent implements OnInit {
   listeVote: Vote[];
 
   constructor(private dataService: DataService) {
-    this.listeVote = this.dataService.listerVotes();
   }
 
   supp(i) {
@@ -21,6 +20,12 @@ export class HistoriqueVotesComponent implements OnInit {
   }
 
   ngOnInit() {
+    // preciser que le tableau est vide
+    this.listeVote = [];
+
+    // recuperation de l'observable (ici vote) et on l'ajoute à la liste
+    this.dataService.listerVotes().subscribe(vote => this.listeVote.unshift(vote));
+    // unshift ajoute au debut du tableau, push ajoute à la fin du tableau
   }
 
 }
