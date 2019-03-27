@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Collegue, Avis } from '../models';
 import { DataService } from '../services/data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-accueil',
@@ -9,14 +10,23 @@ import { DataService } from '../services/data.service';
 })
 export class AccueilComponent implements OnInit {
 
-  collegues:Collegue[];
+  actionSub: Subscription ;
+  collegues: Collegue[] ;
 
   constructor(private _serviceAvis: DataService) {
 
    }
 
   ngOnInit() {
-    this.collegues = this._serviceAvis.lister();
+
+    this.actionSub = this._serviceAvis.lister().subscribe(
+      (data: Collegue[]) => {
+       this.collegues = data;
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
 

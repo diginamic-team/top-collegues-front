@@ -10,6 +10,7 @@ import { ScorePipe } from './pipes/score.pipe';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
 import { HistoriquePipe } from './pipes/historique.pipe';
+import { CompteurVoteComponent } from './compteur-vote/compteur-vote.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HistoriquePipe } from './pipes/historique.pipe';
     AccueilComponent,
     ScorePipe,
     HistoriqueVotesComponent,
-    HistoriquePipe
+    HistoriquePipe,
+    CompteurVoteComponent
   ],
   imports: [
     BrowserModule,

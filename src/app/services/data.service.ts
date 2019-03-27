@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Collegue, Avis, Vote } from '../models';
+import { Observable, of, Subject } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +45,7 @@ export class DataService {
     }
   ];
 
-  private listeVotes: Vote[] = [
+  /*private listeVotes: Vote[] = [
     {
       collegue: this.listeCollegues[0],
       avis: Avis.AIMER
@@ -56,15 +58,18 @@ export class DataService {
       collegue: this.listeCollegues[2],
       avis: Avis.DETESTER
     }
-  ]
+  ]*/
+
+  private listeVotes = new Subject<Vote>() ;
 
   constructor() { }
 
-  lister(): Collegue[]  {
-    return this.listeCollegues;
+  lister(): Observable<Collegue[]>  {
+
+    return of(this.listeCollegues);
   }
 
-  donnerUnAvis(collegue: Collegue, avis: Avis): Collegue  {
+  donnerUnAvis(collegue: Collegue, avis: Avis): Observable<Collegue> {
 
     if(avis === Avis.AIMER ){
       collegue.score += 50;
@@ -72,12 +77,14 @@ export class DataService {
       collegue.score -= 80;
     }
 
-    return collegue;
+    this.listeVotes.next({"collegue" : collegue, "avis" : avis }) ;
+
+    return of(collegue);
 
   }
 
-  listerVotes(): Vote[]{
-    return this.listeVotes;
+  listerVotes(): Observable<Vote> {
+    return this.listeVotes.asObservable();
   }
 
 }
