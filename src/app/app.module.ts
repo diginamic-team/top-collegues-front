@@ -11,11 +11,13 @@ import { ListeColleguesComponentComponent } from './liste-collegues-component/li
 import { AccueilComponentComponent } from './accueil-component/accueil-component.component';
 import { ScorePipe } from './pipes/score.pipe';
 import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
+import { CompteurComponent } from './compteur/compteur.component';
+
 
 @NgModule({
 
   declarations: [
-    AppComponent,  AvisComponent, CollegueComponent, ListeColleguesComponentComponent, AccueilComponentComponent, ScorePipe, HistoriqueVotesComponent,
+    AppComponent,  AvisComponent, CollegueComponent, ListeColleguesComponentComponent, AccueilComponentComponent, ScorePipe, HistoriqueVotesComponent, CompteurComponent,
   ],
   imports: [BrowserModule, NgbModule],
   providers: [],
