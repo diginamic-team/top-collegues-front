@@ -1,0 +1,15 @@
+<div class="flex-column">
+  <h3>historique des votes</h3>
+<ul class="list-unstyled">
+  <li *ngFor="let avi of tableauVote, let i =index" class="media d-flex m-1 ">
+    <img class="mr-3 img-fluid " style="width: 170px; height: 120px " src="{{avi.collegue.photoUrl}}" alt="Generic placeholder image">
+    <div class="media-body">
+      <h6 class="mt-0 mb-1">{{avi.collegue.pseudo}}</h6>
+      <div *ngIf="avi.avis == Avis.AIMER"><p>{{avi.collegue.pseudo}} vient d'être aimé par quelqu'un, jolie coup !</p></div>
+      <div *ngIf="avi.avis == Avis.DETESTER"><p>{{avi.collegue.pseudo}} vient d'être détester par quelqu'un, vous avez fait quelque chose de mal !</p></div>
+      <p>{{avi.collegue.score}} <button type="button" class="btn btn-dark btn-sm"(click)="supprimer(i)">Supprimer</button></p>
+      
+      </div>
+  </li>
+</ul>
+</div>
