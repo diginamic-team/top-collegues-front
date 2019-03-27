@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Avis, Collegue } from '../model';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-collegue',
@@ -8,19 +9,15 @@ import { Avis, Collegue } from '../model';
 })
 export class CollegueComponent implements OnInit {
 @Input() col: Collegue;
-  constructor() { }
+  constructor(private _dataSrv: DataService) { }
 
   ngOnInit() {
   }
 
   traiterAvisEmis(unAvis:Avis){
-if(unAvis === Avis.AIMER){
-  this.col.score +=5;
-}
-
-if (unAvis === Avis.DETESTER){
-  this.col.score -=5;
-}
+    this._dataSrv.donnerUnAvis(this.col, unAvis).subscribe(
+      c => this.col = c
+    );
   }
 
 }

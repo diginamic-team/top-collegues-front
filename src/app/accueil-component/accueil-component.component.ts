@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { listeCollegues } from '../mock';
+import { DataService } from '../services/data.service';
+import { Collegue } from '../model';
 
 @Component({
   selector: 'app-accueil-component',
@@ -8,10 +9,11 @@ import { listeCollegues } from '../mock';
 })
 export class AccueilComponentComponent implements OnInit {
 
-  liste = listeCollegues;
-  constructor() { }
+  liste:Collegue[] = [];
+  constructor(private _dataSrv: DataService) { }
 
   ngOnInit() {
+    this._dataSrv.lister().subscribe(l =>  this.liste = l);
   }
 
 }

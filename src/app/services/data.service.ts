@@ -1,6 +1,8 @@
 import { Injectable, Input } from '@angular/core';
 import { Collegue, Avis, Vote } from '../model';
 import { listeCollegues } from '../mock';
+import { Observable, of, Subject, interval } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,34 +10,38 @@ import { listeCollegues } from '../mock';
 export class DataService {
 
 // TODO alimenter la liste de collègues
-listeCollegues: Collegue[] = listeCollegues;
-private listeVotes : Vote[]=[];
+private listeCollegues: Collegue[] = listeCollegues;
+
+private subject = new Subject<Vote>();
+
 
 
 constructor() { }
 
-lister(): Collegue[]  {
+lister(): Observable<Collegue[]>  {
   // Retourne une liste fictives de collègues
-  return this.listeCollegues;
+
+  return of(this.listeCollegues);
+
 }
 
-donnerUnAvis(collegue: Collegue, avis: Avis): Collegue  {
-  if (Avis.AIMER === avis && collegue.score < 200) {
+donnerUnAvis(collegue: Collegue, avis: Avis):Observable <Collegue>  {
+  if (Avis.AIMER === avis) {
     collegue.score += 10;
-  } else if (Avis.DETESTER === avis && collegue.score > -100) {
+  } else if (Avis.DETESTER === avis) {
     collegue.score -= 10;
   }
-  return collegue;
+  this.subject.next({
+    "collegue" : {...collegue},
+    "avis" : avis
+  });
+  return of (collegue);
 }
-listerVotes(): Vote[] {
-  const votes: Vote[] = [
-    { collegue : this.listeCollegues[0], avis : Avis.AIMER},
-    { collegue: this.listeCollegues[1], avis: Avis.AIMER },
-    { collegue: this.listeCollegues[2], avis: Avis.DETESTER },
-    { collegue: this.listeCollegues[3], avis: Avis.DETESTER },
-    { collegue: this.listeCollegues[4], avis: Avis.DETESTER },
-    { collegue: this.listeCollegues[5], avis: Avis.DETESTER }
-];
-  return votes;
+
+listerVotes(): Observable<Vote> {  //subject.asObservable()
+
+
+
+  return this.subject.asObservable();
 }
 }
