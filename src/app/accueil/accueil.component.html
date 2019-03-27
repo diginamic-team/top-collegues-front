@@ -1,4 +1,15 @@
-<button>Rafraichir la liste</button>
+<div class="container">
 
-<app-liste-collegue [liste]= "listeCollegue"></app-liste-collegue>
-<app-historique-votes></app-historique-votes>
+    <button type="button" class="btn btn-outline-primary">Rafraichir la liste</button>
+
+  <div class="row">
+    <div class="col-9">
+      <app-liste-collegue [liste]="listeCollegue"></app-liste-collegue>
+    </div>
+
+    <div class="col-3">
+      <app-historique-votes></app-historique-votes>
+    </div>
+
+  </div>
+</div>

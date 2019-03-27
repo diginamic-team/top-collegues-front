@@ -16,6 +16,10 @@ export class HistoriqueVotesComponent implements OnInit {
     this.listeVote = this.dataService.listerVotes();
   }
 
+  supp(i) {
+    this.listeVote.splice(i, 1);
+  }
+
   ngOnInit() {
   }
 

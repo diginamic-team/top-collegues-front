@@ -21,7 +21,7 @@ export const listeCollegue: Collegue[] = [
   {
     pseudo: 'peter pan',
     score: 3,
-    photoUrl: 'https://i2.cdscdn.com/pdt2/4/5/7/1/400x400/auc2009216181457/rw/peter-pan-162cms-poster-cartonne-grandeur-nature.jpg',
+    photoUrl: 'https://i.pinimg.com/originals/df/9a/91/df9a9108224cdfa518c8e517cb67c20f.jpg',
   },
   {
     pseudo: 'shrek',
@@ -31,7 +31,7 @@ export const listeCollegue: Collegue[] = [
   {
     pseudo: 'chat potté',
     score: 8,
-    photoUrl: 'https://figurinepop.com/public/puss1_2.jpg',
+    photoUrl: 'https://i.pinimg.com/originals/0b/b7/33/0bb733d83ffdb51dae9317c45c8dba2b.jpg',
   },
 ];
 
