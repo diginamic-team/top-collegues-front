@@ -9,12 +9,16 @@ import { DataService } from '../services/data.service';
 })
 export class HistoriqueVotesComponent implements OnInit {
 
-  @Input() votes:Vote[]=this._serviceVote.listerVotes();
+  @Input() votes: Vote[] = this._serviceVote.listerVotes();
 
   constructor(private _serviceVote: DataService) { }
 
   ngOnInit() {
 
+  }
+
+  supprimer(i: number){
+    this.votes.splice(i,1);
   }
 
 }
