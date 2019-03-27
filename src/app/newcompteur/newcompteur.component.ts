@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { Subscription } from 'rxjs';
-import { Vote } from '../models';
 
 @Component({
   selector: 'app-newcompteur',
@@ -10,7 +9,7 @@ import { Vote } from '../models';
 })
 export class NewcompteurComponent implements OnDestroy {
 
-  compteurVote: number;
+  compteurVote: number = 0;
   compteurSub: Subscription
   constructor(private _dataService: DataService) {
     this.compteurSub = this._dataService.listerVote().subscribe(() => {
