@@ -27,7 +27,7 @@ export class DataService {
   lister(): Observable<Collegue[]> {
     // TODO retourner une liste fictives de collègues
     // utiliser la fonction `of`
-    return this._http.get<any[]>(URL_BACKEND + '/collegues')
+    return this._http.get<any[]>(URL_BACKEND + 'collegues')
       .pipe(
         map(
           (tabCollegueServeur: any[]) => tabCollegueServeur.map(colServeur => {
@@ -42,7 +42,7 @@ export class DataService {
   }
 
   donnerUnAvis(collegue: Collegue, avis: Avis): Observable<Collegue> {
-    return this._http.patch<Collegue>(URL_BACKEND + '/collegues/' + collegue.pseudo,
+    return this._http.patch<Collegue>(URL_BACKEND + 'collegues/' + collegue.pseudo,
       {
         Action: avis
       });
