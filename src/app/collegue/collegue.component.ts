@@ -23,7 +23,7 @@ export class CollegueComponent implements OnInit {
 
   ngOnInit() {
   }
-
+/*
   check(a: Avis): void {
     if (Avis.AIMER === a && this.col.score < 40000000000000) {
       this.col.score = this.data.donnerUnAvis(this.col, a ).score;
@@ -39,6 +39,24 @@ export class CollegueComponent implements OnInit {
       }
     }
   }
+  */
 
+   check(a: Avis): void {
+    if (Avis.AIMER === a && this.col.score < 40000000000000) {
+      this.data.donnerUnAvis(this.col, a ).subscribe(value => (this.col = value),
+      error => alert(`Failed observable ! ` + error));
+      this.dislike = true;
+      if (this.col.score === 400000000000000000) {
+        this.like = true;
+      }
+    } else if (Avis.DETESTER === a) {
+      this.data.donnerUnAvis(this.col, a).subscribe(value => (this.col = value),
+      error => alert(`Failed observable ! ` + error));
+      this.like = true;
+      if (this.col.score === -100) {
+        this.dislike = true;
+      }
+    }
+  }
 
 }
