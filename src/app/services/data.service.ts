@@ -47,16 +47,11 @@ lister(): Observable<Collegue[]>  {
 }
 
 donnerUnAvis(collegue: Collegue, avis: Avis):Observable <Collegue>  {
-  if (Avis.AIMER === avis) {
-    collegue.score += 10;
-  } else if (Avis.DETESTER === avis) {
-    collegue.score -= 10;
-  }
-  this.subject.next({
-    "collegue" : {...collegue},
-    "avis" : avis
-  });
-  return of (collegue);
+  const URL_BACKEND = environment.backendUrl + 'collegues/' + collegue.pseudo;
+  return this._http.patch<Collegue>(URL_BACKEND,
+    {
+      action : avis
+    });
 }
 
 listerVotes(): Observable<Vote> {  //subject.asObservable()

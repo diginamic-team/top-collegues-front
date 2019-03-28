@@ -1,0 +1,30 @@
+<h1>Créer un nouvel employé</h1>
+
+        <form>
+          <div class="form-group">
+            <label>Matricule</label>
+            <input name="mat" [(ngModel)]="monFormulaire.matricule" [ngModelOptions]="{updateOn: 'submit'}" class="form-control"  placeholder="Entrer un matricule" required #mat="ngModel">
+          </div>
+          <p class="alerte-formulaire" *ngIf="mat.dirty && mat.invalid">
+              Le matricule est invalide ou inexistant
+            </p>
+
+          <div class="form-group">
+            <label>Pseudo</label>
+            <input name="pseudo" [(ngModel)]="monFormulaire.pseudo" [ngModelOptions]="{updateOn: 'blur'}" class="form-control"  placeholder="Entrer un pseudo" required minlength="2" #pseudo='ngModel'>
+          </div>
+
+          <p class="alerte-formulaire" *ngIf="pseudo.dirty && pseudo.invalid">
+            Un pseudo doit contenir au moins deux caractères
+          </p>
+
+          <div class="form-group">
+            <label>Image</label>
+            <input name="image" [(ngModel)]="monFormulaire.pseudo" [ngModelOptions]="{updateOn: 'submit'}" class="form-control"  placeholder="Entrer une image" required #image ='ngModel'>
+          </div>
+          <p class="alerte-formulaire" *ngIf="image.dirty && image.invalid">
+              Image requise
+            </p>
+
+          <button type="submit" class="btn btn-primary">Ajouter</button>
+        </form>

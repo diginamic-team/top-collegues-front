@@ -13,13 +13,16 @@ import { ScorePipe } from './pipes/score.pipe';
 import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
 import { CompteurComponent } from './compteur/compteur.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-template-form/nouveau-collegue-template-form.component';
+import { PseudoMatriculeValidatorDirective } from './validators/pseudo-matricule-validator.directive';
+import { FormsModule }   from '@angular/forms';
 
 @NgModule({
 
   declarations: [
-    AppComponent,  AvisComponent, CollegueComponent, ListeColleguesComponentComponent, AccueilComponentComponent, ScorePipe, HistoriqueVotesComponent, CompteurComponent,
+    AppComponent,  AvisComponent, CollegueComponent, ListeColleguesComponentComponent, AccueilComponentComponent, ScorePipe, HistoriqueVotesComponent, CompteurComponent, NouveauCollegueTemplateFormComponent, PseudoMatriculeValidatorDirective,
   ],
-  imports: [BrowserModule, NgbModule, HttpClientModule],
+  imports: [BrowserModule, NgbModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
