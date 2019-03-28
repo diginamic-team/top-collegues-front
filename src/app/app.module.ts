@@ -10,6 +10,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { ScorePipe } from './pipes/score.pipe';
 import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
 import { NewcompteurComponent } from './newcompteur/newcompteur.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,9 +24,11 @@ import { NewcompteurComponent } from './newcompteur/newcompteur.component';
     ScorePipe,
     HistoriqueVotesComponent,
     NewcompteurComponent
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

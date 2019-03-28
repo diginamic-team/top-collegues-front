@@ -16,8 +16,8 @@ export class CollegueComponent implements OnInit {
   ngOnInit() {
   }
   avisTraiterEmis(unAvis: Avis){
-    this.col.score = this._DateService.donnerUnAvis(this.col, unAvis).score;
-    this.disable()
+   this._DateService.donnerUnAvis(this.col, unAvis).subscribe(c => (this.col = c, this.disable()));
+
   }
   disable(){
       if(this.col.score >=1000){
@@ -31,7 +31,7 @@ export class CollegueComponent implements OnInit {
           this.hideDetester = false;
 
         }
-  
+
   }
 
 }
