@@ -12,14 +12,14 @@ import { AccueilComponentComponent } from './accueil-component/accueil-component
 import { ScorePipe } from './pipes/score.pipe';
 import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
 import { CompteurComponent } from './compteur/compteur.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 
   declarations: [
     AppComponent,  AvisComponent, CollegueComponent, ListeColleguesComponentComponent, AccueilComponentComponent, ScorePipe, HistoriqueVotesComponent, CompteurComponent,
   ],
-  imports: [BrowserModule, NgbModule],
+  imports: [BrowserModule, NgbModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })
