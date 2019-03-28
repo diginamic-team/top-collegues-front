@@ -10,8 +10,15 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { ScorePipe } from './pipes/score.pipe';
 import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
 import { CompteurVoteComponent } from './compteur-vote/compteur-vote.component';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
+  imports: [
+    BrowserModule, NgbModule,
+    HttpClientModule,
+  ],
   declarations: [
     AppComponent,
     AvisComponent,
@@ -22,10 +29,8 @@ import { CompteurVoteComponent } from './compteur-vote/compteur-vote.component';
     HistoriqueVotesComponent,
     CompteurVoteComponent
   ],
-  imports: [
-    BrowserModule, NgbModule
-  ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
