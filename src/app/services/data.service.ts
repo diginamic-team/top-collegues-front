@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Collegue, Avis, Vote } from '../models';
 import { Observable, of, Subject } from 'rxjs';
+import {environment} from '../../environments/environment';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+const URL_BACKEND = environment.backendUrl;
 
 
 @Injectable({
@@ -8,8 +12,8 @@ import { Observable, of, Subject } from 'rxjs';
 })
 export class DataService {
 
-  listeCollegues: Collegue[] = [
-    {
+  listeCollegues: Collegue[] = []
+    /*{
       pseudo : 'collegue1',
       score :2000,
       imageUrl: "https://static1.squarespace.com/static/528b9077e4b076ee0b892f2f/t/579ce7ab5016e10ca2a21547/1469900728497/border-collie-close-up?format=750w"
@@ -43,7 +47,7 @@ export class DataService {
       score :2000,
       imageUrl: "https://static1.squarespace.com/static/528b9077e4b076ee0b892f2f/t/579ce7ab5016e10ca2a21547/1469900728497/border-collie-close-up?format=750w"
     }
-  ];
+  ];*/
 
   /*private listeVotes: Vote[] = [
     {
@@ -62,24 +66,29 @@ export class DataService {
 
   private listeVotes = new Subject<Vote>() ;
 
-  constructor() { }
+  constructor(private _http: HttpClient) { }
 
   lister(): Observable<Collegue[]>  {
 
-    return of(this.listeCollegues);
+    return  this._http.get<Collegue[]>(URL_BACKEND + '/collegues');
   }
 
   donnerUnAvis(collegue: Collegue, avis: Avis): Observable<Collegue> {
 
-    if(avis === Avis.AIMER ){
+   /*if(avis === Avis.AIMER ){
       collegue.score += 50;
     }else if(avis === Avis.DETESTER){
       collegue.score -= 80;
-    }
+    }*/
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type" : "application/json"
+      })
+    };
 
     this.listeVotes.next({"collegue" : collegue, "avis" : avis }) ;
 
-    return of(collegue);
+    return this._http.patch<Collegue>(URL_BACKEND + '/collegues/' + collegue.pseudo, {action: avis}, httpOptions);//of(collegue);
 
   }
 

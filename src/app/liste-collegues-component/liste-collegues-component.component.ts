@@ -8,8 +8,7 @@ import { Collegue } from '../models';
 })
 export class ListeColleguesComponentComponent implements OnInit {
 
-  @Input() collegues: Collegue[];
-
+  @Input() collegues: Collegue[] ;
 
   pageSize = 1;
 

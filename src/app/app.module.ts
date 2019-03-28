@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AvisComponent } from './avis/avis.component';
@@ -11,6 +11,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
 import { HistoriquePipe } from './pipes/historique.pipe';
 import { CompteurVoteComponent } from './compteur-vote/compteur-vote.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { CompteurVoteComponent } from './compteur-vote/compteur-vote.component';
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

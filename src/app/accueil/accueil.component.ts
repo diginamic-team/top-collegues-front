@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 export class AccueilComponent implements OnInit {
 
   actionSub: Subscription ;
-  collegues: Collegue[] ;
+  collegues: Collegue[] = [];
 
   constructor(private _serviceAvis: DataService) {
 
@@ -29,5 +29,8 @@ export class AccueilComponent implements OnInit {
     );
   }
 
+  rafraichir(){
+    this.ngOnInit();
+  }
 
 }
