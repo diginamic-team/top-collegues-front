@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { Collegue } from '../model';
+import { listeCollegues } from '../mock';
 
 @Component({
   selector: 'app-accueil-component',
@@ -13,7 +14,21 @@ export class AccueilComponentComponent implements OnInit {
   constructor(private _dataSrv: DataService) { }
 
   ngOnInit() {
-    this._dataSrv.lister().subscribe(l =>  this.liste = l);
+    this._dataSrv.lister().subscribe
+    (liste => this.liste = listeCollegues,
+      error => alert ("récupération de la liste fail" + error));
+  }
+
+  rafraichir(){
+    this._dataSrv
+      .lister()
+      .subscribe(
+        liste => (this.liste = liste),
+        error =>
+          alert(
+            `la recuperation des doneees ne s'est pas bien passe` + error
+          )
+      );
   }
 
 }
