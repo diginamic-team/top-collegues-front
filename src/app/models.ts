@@ -6,6 +6,14 @@ export interface Collegue {
 
 }
 
+export interface NewCollegue {
+
+  matricule?: string;
+  pseudo?: string;
+  photoUrl?: string;
+}
+
+
 export enum Avis {
 
   AIME,

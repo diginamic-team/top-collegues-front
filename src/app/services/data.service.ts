@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Collegue, Avis, listeCollegue, Vote } from '../models';
+import { Collegue, Avis, listeCollegue, Vote, NewCollegue } from '../models';
 import { Observable, of, Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 
@@ -42,10 +42,14 @@ export class DataService {
   }
 
   donnerUnAvis(collegue: Collegue, avis: Avis): Observable<Collegue> {
+
     return this._http.patch<Collegue>(URL_BACKEND + 'collegues/' + collegue.pseudo,
       {
         Action: avis
-      });
+      })
+      .pipe(
+        tap(colCourant => this.listeVote.next({ collegue: colCourant, avis: avis }))
+      );
   }
 
 
@@ -79,4 +83,8 @@ export class DataService {
     return this.listeVote.asObservable();
   }
 
+  creerCollegue(newCollegue: NewCollegue) : Observable<Collegue>{
+    return this._http.post<Collegue>(URL_BACKEND + 'collegues/',
+      newCollegue);
+  }
 }
