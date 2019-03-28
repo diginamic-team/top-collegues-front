@@ -3,6 +3,7 @@ import { Collegue, Avis, Vote } from '../models';
 import { Observable, of, Subject } from 'rxjs';
 import {environment} from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {tap} from 'rxjs/operators';
 
 const URL_BACKEND = environment.backendUrl;
 
@@ -86,9 +87,11 @@ export class DataService {
       })
     };
 
-    this.listeVotes.next({"collegue" : collegue, "avis" : avis }) ;
+    //this.listeVotes.next({"collegue" : { ...collegue}, "avis" : avis }) ;
 
-    return this._http.patch<Collegue>(URL_BACKEND + '/collegues/' + collegue.pseudo, {action: avis}, httpOptions);//of(collegue);
+    return this._http.patch<Collegue>(URL_BACKEND + '/collegues/' + collegue.pseudo, {action: avis}, httpOptions)
+    .pipe(
+      tap(collegueServeurAJour => this.listeVotes.next({"collegue" : { ...collegueServeurAJour}, "avis" : avis })));//of(collegue);
 
   }
 
