@@ -12,8 +12,13 @@ import { HistoriqueVotesComponent } from './historique-votes/historique-votes.co
 import { HistoriquePipe } from './pipes/historique.pipe';
 import { CompteurVoteComponent } from './compteur-vote/compteur-vote.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-template-form/nouveau-collegue-template-form.component';
+import { MenuComponentComponent } from './menu-component/menu-component.component';
+import { ROUTES } from './app.routes';
+import { RouterModule } from '@angular/router';
+import { PageDetailComponent } from './page-detail/page-detail.component';
+
 
 
 @NgModule({
@@ -27,13 +32,16 @@ import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-templat
     HistoriqueVotesComponent,
     HistoriquePipe,
     CompteurVoteComponent,
-    NouveauCollegueTemplateFormComponent
+    NouveauCollegueTemplateFormComponent,
+    MenuComponentComponent,
+    PageDetailComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]
