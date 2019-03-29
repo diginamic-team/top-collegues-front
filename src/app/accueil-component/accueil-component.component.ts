@@ -15,7 +15,7 @@ export class AccueilComponentComponent implements OnInit {
 
   ngOnInit() {
     this._dataSrv.lister().subscribe
-    (liste => this.liste = listeCollegues,
+    (liste => this.liste = liste,
       error => alert ("récupération de la liste fail" + error));
   }
 
@@ -26,7 +26,7 @@ export class AccueilComponentComponent implements OnInit {
         liste => (this.liste = liste),
         error =>
           alert(
-            `la recuperation des doneees ne s'est pas bien passe` + error
+            `la recuperation des doneees ne s'est pas bien passée` + error
           )
       );
   }

@@ -21,10 +21,11 @@ export class NouveauCollegueTemplateFormComponent implements OnInit {
   submit() {
     this._dataSrv.envoieBack(this.monFormulaire).subscribe(
       (data: MonFormulaire) => {
-        this.monFormulaire = data;
+        this.error;
       },
     error => {
-      this.error = "Matricule non reconnu ou inexistant"
+      this.error = error.error;
+      console.log(error);
     },
       () => {
 
