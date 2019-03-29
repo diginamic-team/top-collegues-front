@@ -16,8 +16,8 @@ export interface NewCollegue {
 
 export enum Avis {
 
-  AIME,
-  DETESTE,
+  AIME="AIMER",
+  DETESTE="DETESTER",
 }
 
 export const listeCollegue: Collegue[] = [

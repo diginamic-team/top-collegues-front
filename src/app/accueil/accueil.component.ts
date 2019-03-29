@@ -24,7 +24,7 @@ export class AccueilComponent implements OnInit, OnDestroy {
         this.listeCollegue = data;
       },
       error => {
-         // signal d'erreur
+        // signal d'erreur
         console.log(error);
       },
 
@@ -32,6 +32,22 @@ export class AccueilComponent implements OnInit, OnDestroy {
         // signal de fin
       });
   }
+
+  //methode pour le bouton rafraichir
+  rafraichir() {
+
+    this.actionSub = this.dataService.lister().subscribe(
+      (data: Collegue[]) => {
+        this.listeCollegue = data;
+      },
+      error => {
+        console.log(error);
+      },
+      () => {
+
+      });
+  }
+
 
   ngOnDestroy() {
     // désabonnement du composant avant sa destruction

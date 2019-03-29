@@ -11,15 +11,19 @@ import { DataService } from '../services/data.service';
 export class NouveauCollegueTemplateFormComponent implements OnInit {
 
   newCollegue: NewCollegue = {};
+  erreur: string;
 
   submit() {
 
     console.log(this.newCollegue);
     this._dataSrv.creerCollegue(this.newCollegue)
-    .subscribe(
-      collegueCree => console.log('super'),
-      err => console.log('ooops', err.error)
-    );
+      .subscribe(
+        _collegueCree => this.erreur = '',
+        // collegueCree => console.log('super'),
+        // err => console.log('ooops', err.error),
+        err => this.erreur = err.error
+
+      );
   }
 
   constructor(private _dataSrv: DataService) { }

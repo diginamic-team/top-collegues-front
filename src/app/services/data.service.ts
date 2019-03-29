@@ -5,6 +5,14 @@ import { map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 
+//convertion car pas les meme nommage des deux cotés
+const collegueServeurToCollegueFront = colServeur => {
+  return {
+    pseudo: colServeur.pseudo,
+    photoUrl: colServeur.imageUrl,
+    score: colServeur.score
+  };
+};
 
 // en développement, URL_BACKEND = 'http://localhost:port'
 // en mode production, URL_BACKEND = 'http://adresseheroku'
@@ -30,24 +38,19 @@ export class DataService {
     return this._http.get<any[]>(URL_BACKEND + 'collegues')
       .pipe(
         map(
-          (tabCollegueServeur: any[]) => tabCollegueServeur.map(colServeur => {
-            return {
-              pseudo: colServeur.pseudo,
-              photoUrl: colServeur.imageUrl,
-              score: colServeur.score
-            };
-          }
+          (tabCollegueServeur: any[]) => tabCollegueServeur.map(collegueServeurToCollegueFront
           ))
       );
   }
 
   donnerUnAvis(collegue: Collegue, avis: Avis): Observable<Collegue> {
 
-    return this._http.patch<Collegue>(URL_BACKEND + 'collegues/' + collegue.pseudo,
+    return this._http.patch<any>(URL_BACKEND + 'collegues/' + collegue.pseudo,
       {
-        Action: avis
+        action: avis
       })
       .pipe(
+        map(collegueServeurToCollegueFront),
         tap(colCourant => this.listeVote.next({ collegue: colCourant, avis: avis }))
       );
   }
