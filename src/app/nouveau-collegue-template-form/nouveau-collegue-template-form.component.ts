@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
 
-class MonFormulaire { matricule:string; pseudo:string; score:number; imageURL:string; }
+export class MonFormulaire { matricule: string; pseudo: string; score: number; imageURL: string; }
 
 @Component({
   selector: 'app-nouveau-collegue-template-form',
@@ -10,20 +11,24 @@ class MonFormulaire { matricule:string; pseudo:string; score:number; imageURL:st
 
 
 export class NouveauCollegueTemplateFormComponent implements OnInit {
-  monFormulaire : MonFormulaire = new MonFormulaire();
+  error: string;
+  monFormulaire: MonFormulaire = new MonFormulaire();
 
-  constructor() { }
+  constructor(private _dataSrv: DataService) { }
 
-  ngOnInit() {
-
-  }
-
-
+  ngOnInit() { }
 
   submit() {
-    console.log(this.monFormulaire);
+    this._dataSrv.envoieBack(this.monFormulaire).subscribe(
+      (data: MonFormulaire) => {
+        this.monFormulaire = data;
+      },
+    error => {
+      this.error = "Matricule non reconnu ou inexistant"
+    },
+      () => {
+
+      });
+  }
 }
 
-
-
-}
