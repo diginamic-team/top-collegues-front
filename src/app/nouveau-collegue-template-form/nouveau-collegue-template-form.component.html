@@ -1,0 +1,13 @@
+<h1>Formulaire piloté par le template</h1>
+<div class="row">
+<form (ngSubmit)="submit()">
+
+    <label>Pseudo : </label><input [(ngModel)]="collegueForm.pseudo" name="pseudo">
+
+    <label>Matricule : </label><input [(ngModel)]="collegueForm.matricule" name="matricule">
+
+    <label>Photo : </label><input [(ngModel)]="collegueForm.photo" name="photo">
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>`
+</div>
