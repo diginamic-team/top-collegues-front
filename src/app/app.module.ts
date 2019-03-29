@@ -13,6 +13,9 @@ import { CompteurVoteComponent } from './compteur-vote/compteur-vote.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-template-form/nouveau-collegue-template-form.component';
 import { FormsModule } from '@angular/forms';
+import { MenuComponent } from './menu/menu.component';
+import { RouterModule } from '@angular/router';
+import { ROUTES } from './app.routes';
 
 
 
@@ -20,7 +23,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule, NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule, RouterModule.forRoot(ROUTES)
   ],
   declarations: [
     AppComponent,
@@ -31,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     ScorePipe,
     HistoriqueVotesComponent,
     CompteurVoteComponent,
-    NouveauCollegueTemplateFormComponent
+    NouveauCollegueTemplateFormComponent,
+    MenuComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
