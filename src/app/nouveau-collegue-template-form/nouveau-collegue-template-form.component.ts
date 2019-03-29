@@ -10,10 +10,15 @@ import { DataService } from '../services/data.service';
 export class NouveauCollegueTemplateFormComponent implements OnInit {
 
   collegueForm: CollegueForm = {};
-
+  messageErreur: string = '';
   submit() {
-    this._dataService.verificatonForm(this.collegueForm).subscribe();
-    console.log(this.collegueForm)
+    this._dataService.verificatonForm(this.collegueForm).subscribe( () => {
+      this.collegueForm + ' //Envoyé avec succès'
+    },
+    error => {
+      this.messageErreur = error.error;
+    });
+
   }
   constructor(private _dataService:DataService) { }
 
