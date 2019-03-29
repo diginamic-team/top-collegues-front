@@ -83,7 +83,7 @@ export class DataService {
     return this.listeVote.asObservable();
   }
 
-  creerCollegue(newCollegue: NewCollegue) : Observable<Collegue>{
+  creerCollegue(newCollegue: NewCollegue): Observable<Collegue> {
     return this._http.post<Collegue>(URL_BACKEND + 'collegues/',
       newCollegue);
   }

@@ -15,9 +15,10 @@ export class NouveauCollegueTemplateFormComponent implements OnInit {
   submit() {
 
     console.log(this.newCollegue);
-    this._dataSrv.creerCollegue(this.newCollegue).subscribe(
+    this._dataSrv.creerCollegue(this.newCollegue)
+    .subscribe(
       collegueCree => console.log('super'),
-      err => console.log('ooops', err)
+      err => console.log('ooops', err.error)
     );
   }
 
