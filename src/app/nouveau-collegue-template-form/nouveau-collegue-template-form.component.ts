@@ -16,6 +16,7 @@ export class NouveauCollegueTemplateFormComponent implements OnInit {
   constructor(private _service: DataService) { }
 
   ngOnInit() {
+
   }
 
   submit() {
@@ -23,10 +24,14 @@ export class NouveauCollegueTemplateFormComponent implements OnInit {
     this._service.creerCollegue(this.nouveauCollegue).subscribe(
       value => this.enregistrer = 'Vous êtes enregistré.e !',
       error => this.erreur = error.error,
-      () => this.erreur = '',
     );
+
   }
 
+  initMessageErreur() {
+    this.enregistrer = '';
+    this.erreur = '';
+  }
 
 
 }
