@@ -13,7 +13,7 @@ export class AccueilComponent implements OnInit {
   listerCollegueSub: Subscription;
   constructor(private _dataService: DataService) {
 
-    this._dataService.lister().subscribe((collegue: Collegue[]) => {
+   this.listerCollegueSub =  this._dataService.lister().subscribe((collegue: Collegue[]) => {
       this.listeDeCollegue = collegue;
     },
       error => {
@@ -24,6 +24,14 @@ export class AccueilComponent implements OnInit {
   ngOnDestroy() {
     // désabonnement du composant avant sa destruction
     this.listerCollegueSub.unsubscribe();
+  }
+  reload() {
+    this.listerCollegueSub =  this._dataService.lister().subscribe((collegue: Collegue[]) => {
+      this.listeDeCollegue = collegue;
+    },
+      error => {
+
+      });
   }
   ngOnInit() {
   }

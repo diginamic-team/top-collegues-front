@@ -13,6 +13,9 @@ import { NewcompteurComponent } from './newcompteur/newcompteur.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-template-form/nouveau-collegue-template-form.component';
+import { MenuComponent, ROUTES } from './menu/menu.component';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -26,13 +29,15 @@ import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-templat
     ScorePipe,
     HistoriqueVotesComponent,
     NewcompteurComponent,
-    NouveauCollegueTemplateFormComponent
+    NouveauCollegueTemplateFormComponent,
+    MenuComponent
 
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]

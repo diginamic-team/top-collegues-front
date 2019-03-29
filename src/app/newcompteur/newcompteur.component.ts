@@ -20,7 +20,7 @@ export class NewcompteurComponent implements OnDestroy {
       });
   }
 
-  ngOnDestroy(): void {
-    throw new Error("Method not implemented.");
+  ngOnDestroy() {
+
   }
 }
