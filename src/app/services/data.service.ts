@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Collegue, Avis, Vote } from '../models';
+import { Collegue, Avis, Vote, NouveauCollegue } from '../models';
 import { Observable, of, Subject } from 'rxjs';
 import {environment} from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -91,12 +91,16 @@ export class DataService {
 
     return this._http.patch<Collegue>(URL_BACKEND + '/collegues/' + collegue.pseudo, {action: avis}, httpOptions)
     .pipe(
-      tap(collegueServeurAJour => this.listeVotes.next({"collegue" : { ...collegueServeurAJour}, "avis" : avis })));//of(collegue);
+      tap(collegueServeurAJour => this.listeVotes.next({ "collegue" : { ...collegueServeurAJour}, "avis" : avis })));//of(collegue);
 
   }
 
   listerVotes(): Observable<Vote> {
     return this.listeVotes.asObservable();
+  }
+
+  creerCollegue(nouveauCollegue: NouveauCollegue): Observable<Collegue> {
+    return this._http.post<Collegue>(URL_BACKEND + '/collegues', nouveauCollegue);
   }
 
 }

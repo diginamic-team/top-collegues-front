@@ -16,3 +16,16 @@ export interface Vote {
   collegue: Collegue;
   avis: Avis;
 }
+
+export class NouveauCollegue {
+  matricule?: string;
+  pseudo?: string;
+  imageUrl?: string;
+
+  constructor(matricule?, pseudo?, imageUrl?){
+    this.matricule = matricule ;
+    this.pseudo = pseudo;
+    this.imageUrl = imageUrl;
+  }
+
+}

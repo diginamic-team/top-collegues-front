@@ -1,0 +1,24 @@
+<div class="container">
+<h2>Créer un nouveau collègue</h2>
+        <form (ngSubmit)="submit()" #monForm="ngForm">
+          <div class="form-group">
+            <label>Matricule</label>
+            <input class="form-control" [(ngModel)]="nouveauCollegue.matricule" name="matricule" #matricule="ngModel" required>
+            <p *ngIf="matricule.dirty && matricule.invalid">
+              vous devez renseignez votre matricule.
+            </p>
+
+          </div>
+            <label>Pseudo</label>
+            <input class="form-control" [(ngModel)]="nouveauCollegue.pseudo" name="pseudo" #pseudo="ngModel" required minlength="2">
+            <p *ngIf="pseudo.dirty && pseudo.invalid">
+              votre pseudo n'est pas valide.
+            </p>
+
+          <div class="form-group">
+            <label>URL image</label>
+            <input class="form-control" [(ngModel)]="nouveauCollegue.imageUrl" name="imageUrl">
+          </div>
+            <button type="submit" [disabled]="!monForm.valid">Ajouter</button>
+        </form>
+      </div>

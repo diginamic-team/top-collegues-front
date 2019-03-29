@@ -12,6 +12,8 @@ import { HistoriqueVotesComponent } from './historique-votes/historique-votes.co
 import { HistoriquePipe } from './pipes/historique.pipe';
 import { CompteurVoteComponent } from './compteur-vote/compteur-vote.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
+import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-template-form/nouveau-collegue-template-form.component';
 
 
 @NgModule({
@@ -24,12 +26,14 @@ import { HttpClientModule } from '@angular/common/http';
     ScorePipe,
     HistoriqueVotesComponent,
     HistoriquePipe,
-    CompteurVoteComponent
+    CompteurVoteComponent,
+    NouveauCollegueTemplateFormComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
