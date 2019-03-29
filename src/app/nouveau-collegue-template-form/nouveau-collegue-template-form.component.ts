@@ -9,7 +9,8 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./nouveau-collegue-template-form.component.css']
 })
 export class NouveauCollegueTemplateFormComponent implements OnInit {
-
+  enregistrer: string;
+  erreur: string;
   nouveauCollegue: NouveauCollegue = {} ;
 
   constructor(private _service: DataService) { }
@@ -20,7 +21,9 @@ export class NouveauCollegueTemplateFormComponent implements OnInit {
   submit() {
     // console.log(this.collegue.matricule, this.collegue.pseudo, this.collegue.imageUrl) ;
     this._service.creerCollegue(this.nouveauCollegue).subscribe(
-      error => console.log(error),
+      value => this.enregistrer = 'Vous êtes enregistré.e !',
+      error => this.erreur = error.error,
+      () => this.erreur = '',
     );
   }
 

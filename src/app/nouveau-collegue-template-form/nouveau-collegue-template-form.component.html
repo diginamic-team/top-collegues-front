@@ -20,5 +20,11 @@
             <input class="form-control" [(ngModel)]="nouveauCollegue.imageUrl" name="imageUrl">
           </div>
             <button type="submit" [disabled]="!monForm.valid">Ajouter</button>
+            <p *ngIf="erreur && erreur.length>0">
+              {{erreur}}
+            </p>
+            <p *ngIf="enregistrer">
+              {{enregistrer}}
+            </p>
         </form>
       </div>
