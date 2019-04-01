@@ -1,4 +1,8 @@
-<button>Rafraichir la liste</button>
+<div style="margin-left:50px;">
+  <app-count-votes></app-count-votes>
+</div>
+<button class="btn btn-warning">Rafraichir la liste</button>
+<!-- <app-count-votes></app-count-votes> -->
 <div class="row">
 <div class="col-9">
   <app-liste-collegues [listCollegue]="listCollegues"></app-liste-collegues>
@@ -7,5 +11,21 @@
 <div class="col-3">
   <app-historique-votes></app-historique-votes>
 </div>
-
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>One fine body&hellip;</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<app-nouveau-collegue-template-form></app-nouveau-collegue-template-form>

@@ -1,0 +1,13 @@
+<div class="card-group">
+  <div class="card">
+    <img class="card-img-top" [src]=collegue.photo alt="Card image cap" height="350">
+    <div class="card-body">
+      <h5 class="card-title">{{collegue.pseudo}}</h5>
+      <h5 class="card-title">{{collegue.score}}</h5>
+      <p class="card-text">{{collegue.prenom}}</p>
+      <p class="card-text">{{collegue.email}}</p>
+    </div>
+    <div class="card-footer">
+      <app-avis (change)="voter($event)" [like]="like" [dislike]="dislike"></app-avis>
+    </div>
+  </div>

@@ -8,8 +8,8 @@ import { Avis } from '../models';
 })
 export class AvisComponent implements OnInit {
   @Output() change: EventEmitter<Avis> = new EventEmitter<Avis>();
-  @Input() dislikeActivated;
-  @Input() likeActivated;
+  @Input() dislike;
+  @Input() like;
   Avis = Avis;
   avis(s: Avis) {
     this.change.emit(s);

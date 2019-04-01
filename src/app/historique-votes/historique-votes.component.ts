@@ -13,7 +13,11 @@ export class HistoriqueVotesComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    this.listeVotes = this.data.listerVotes();
+    // this.data.listerVotes().subscribe(vote =>
+    //   this.listeVotes.unshift(vote)
+    //   );
+
+    this.data.listerVotes().subscribe(l => this.listeVotes.unshift(l));
   }
 
   delete(index) {

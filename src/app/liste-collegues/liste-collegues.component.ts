@@ -12,6 +12,7 @@ export class ListeColleguesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.listCollegue = [];
   }
 
 }
