@@ -1,0 +1,46 @@
+<h1 style="margin: 5% 0; border-top: 2px solid black; text-align: center">Ajouter un collègue </h1>
+<form (ngSubmit)="submit()" [ngFormOptions]="{updateOn: 'blur'}" appPseudoMatriculeValidator #f="ngForm"  >
+<div class="form-row">
+
+  <div class="col-md-4 mb-3">
+    <label>Matricule : </label>
+    <input name="matricule" appMatriculeValidator [(ngModel)]="c.matricule" name="matricule" #mat="ngModel"  required>
+    <div *ngIf="mat.errors" style ="color: red"class = "error">
+{{mat.errors.error}}
+      </div>
+
+
+  </div>
+
+
+
+  <div class="col-md-4 mb-3">
+    <label>Pseudo : </label>
+    <input [(ngModel)]="c.nom" name="nom" #ps="ngModel" required minlength="3">
+
+
+  <p *ngIf="check(f.errors) || errorExist">
+
+    <ngb-alert [type]="type" [dismissible]="false">{{message}}</ngb-alert>
+  </p>
+
+
+  </div>
+
+  <div class="col-md-4 mb-3">
+  <label>Url Image :</label>
+  <input [(ngModel)]="c.photo" name="photo" placeholder="Optionnel">
+
+    <div class="valid-feedback">
+    </div>
+
+</div>
+
+
+  <button type="submit" class="btn btn-primary" [disabled]="mat.invalid || ps.invalid || f.invalid">Valider</button>
+
+
+</div>
+
+
+</form>
