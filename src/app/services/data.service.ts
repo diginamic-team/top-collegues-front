@@ -78,7 +78,7 @@ export class DataService {
     return this._http.post<Collegue>(URL_BACKEND, {
       matricule : mat,
       nom : ps,
-      imageURL : img
+      photo : img
     });
 }
 
