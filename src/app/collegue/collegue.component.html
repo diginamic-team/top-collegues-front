@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-m">
+      <div class="card; style= width: 18rem">
+        <!-- syntax angular -->
+        <a routerLink="/collegue/{{col.pseudo}}">
+        <img class="card-img-top" [src]="col.photoUrl">
+      </a>
+        <!-- syntax html -->
+        <!-- <img src= {{col.photoUrl}}/>  -->
+        <div>
+          <p class="card-text">{{col.pseudo | uppercase}}</p>
+          <p class="card-text">{{col.score | score }} </p>
+          <app-avis (add)=avisEmis($event)></app-avis>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

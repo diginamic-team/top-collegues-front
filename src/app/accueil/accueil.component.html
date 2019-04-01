@@ -1,0 +1,17 @@
+<app-compteur-vote></app-compteur-vote>
+
+<div class="container">
+
+  <button type="button" class="btn btn-outline-primary" (click)="rafraichir()">Rafraichir la liste</button>
+
+  <div class="row">
+    <div class="col-9">
+      <app-liste-collegue [liste]="listeCollegue"></app-liste-collegue>
+    </div>
+
+    <div class="col-3">
+      <app-historique-votes></app-historique-votes>
+    </div>
+
+  </div>
+</div>

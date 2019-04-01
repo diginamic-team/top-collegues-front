@@ -1,0 +1,35 @@
+<h2>Formulaire piloté par le template</h2>
+
+<form (ngSubmit)="submit()" #monForm="ngForm" [ngFormOptions]="{updateOn: 'blur'}">
+  <div class="form-group row">
+    <label for="matricule" class="col-sm-4 col-form-label">Matricule</label>
+    <div class="col-sm-6">
+      <input [(ngModel)]="newCollegue.matricule" name="matricule" #matricule="ngModel" required>
+      <p>
+        {{erreur}}
+      </p>
+      <p *ngIf="matricule.dirty && matricule.invalid">
+        matricule invalide.
+      </p>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="pseudo" class="col-sm-4 col-form-label">Pseudo</label>
+    <div class="col-sm-6">
+      <input [(ngModel)]="newCollegue.pseudo" name="pseudo" #pseudo="ngModel" required minlength="3">
+      <p *ngIf="pseudo.dirty && pseudo.invalid">
+        pseudo invalide.
+      </p>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="photoUrl" class="col-sm-4 col-form-label">PhotoUrl</label>
+    <div class="col-sm-6">
+      <input [(ngModel)]="newCollegue.photoUrl" name="photoUrl">
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="matricule.invalid || pseudo.invalid">Valider</button>
+
+</form>

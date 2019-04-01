@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-l">
+      <div class="card; style= width: 18rem">
+        <img class="card-img-top" [src]="colBd.photoUrl" />
+        <div>
+          <p class="card-text">{{colBd.pseudo | uppercase}}</p>
+          <p class="card-text">{{colBd.score | score }} </p>
+          <p class="card-text">{{colBd.nom}}</p>
+          <p class="card-text">{{colBd.prenom}}</p>
+          <p class="card-text">{{colBd.email}}</p>
+          <p class="card-text">{{colBd.adresse}}</p>
+          <app-avis (add)=avisEmis($event)></app-avis>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

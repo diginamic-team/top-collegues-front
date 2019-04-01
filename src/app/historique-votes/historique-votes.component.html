@@ -1,0 +1,12 @@
+<a>Historique</a>
+
+<ul>
+  <li class="media" *ngFor="let vote of listeVote ; let i =index">
+    <img class="mr-3" [src]="vote.collegue.photoUrl" height="100px">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">{{vote.collegue.pseudo}}</h5>
+      {{vote.collegue.score}}
+      <button type="button" class="btn btn-outline-dark" (click)=supp(i)>Supprimer</button>
+    </div>
+  </li>
+</ul>
