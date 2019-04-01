@@ -55,8 +55,12 @@ export class DataService {
       {
         'matricule': collegueForm.matricule,
         'pseudo': collegueForm.pseudo,
-        'photo': collegueForm.photo
+        'photoUrl': collegueForm.photo
       },
       this.httpOptions)
   }
+
+  detailProfil(pseudo: string): Observable<Collegue> {
+    const URL_BACKEND = environment.backendUrl;
+    return this._http.get<Collegue>(URL_BACKEND + 'collegues/' + pseudo)};
 }

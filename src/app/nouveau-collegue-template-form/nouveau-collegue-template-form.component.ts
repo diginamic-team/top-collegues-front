@@ -15,7 +15,7 @@ export class NouveauCollegueTemplateFormComponent implements OnInit {
   submit() {
     this._dataService.verificatonForm(this.collegueForm).subscribe( () => {
       this.collegueForm + ' //Envoyé avec succès'
-      this.router.navigate(['/accueil'])
+      this.router.navigate(['/accueil']);
     },
     error => {
       this.messageErreur = error.error;

@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-template-form/nouveau-collegue-template-form.component';
 import { MenuComponent, ROUTES } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
+import { DetailComponent } from './detail/detail.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { RouterModule } from '@angular/router';
     HistoriqueVotesComponent,
     NewcompteurComponent,
     NouveauCollegueTemplateFormComponent,
-    MenuComponent
+    MenuComponent,
+    DetailComponent
 
   ],
   imports: [
