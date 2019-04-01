@@ -18,6 +18,7 @@ import { MenuComponentComponent } from './menu-component/menu-component.componen
 import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { PageDetailComponent } from './page-detail/page-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -42,7 +43,8 @@ import { PageDetailComponent } from './page-detail/page-detail.component';
     NgbModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
