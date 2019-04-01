@@ -3,7 +3,7 @@
         <form (ngSubmit)="submit()" #monForm="ngForm">
           <div class="form-group">
             <label>Matricule</label>
-            <input class="form-control" [(ngModel)]="nouveauCollegue.matricule" name="matricule" #matricule="ngModel" required  (focus)="initMessageErreur()">
+            <input class="form-control"  [(ngModel)]="nouveauCollegue.matricule" name="matricule" #matricule="ngModel" required  (focus)="initMessageErreur()">
             <p *ngIf="matricule.dirty && matricule.invalid">
               vous devez renseignez votre matricule.
             </p>

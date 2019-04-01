@@ -4,6 +4,7 @@ import { Observable, of, Subject, ReplaySubject } from 'rxjs';
 import {environment} from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {tap} from 'rxjs/operators';
+import { ValidationErrors } from '@angular/forms';
 
 const URL_BACKEND = environment.backendUrl;
 
@@ -104,7 +105,13 @@ export class DataService {
   }
 
   envoyerPseudo(pseudo: string){
-    return this._http.get<Collegue>(URL_BACKEND + '/collegues/'+ pseudo);
+    return this._http.get<Collegue>(URL_BACKEND + '/collegues/' + pseudo);
   }
+
+  /*checkMatricule(m): Observable<boolean> {
+
+    return this._http.get<boolean>(URL_BACKEND + '/collegues?matricule=' + m);
+
+}*/
 
 }
