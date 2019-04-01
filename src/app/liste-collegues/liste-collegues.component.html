@@ -1,0 +1,7 @@
+<div class="row">
+  <div class="col-4" *ngFor="let c of listCollegue | slice: (page-1) * 3 : (page-1) * 3 + 3">
+    <app-collegue [col]="c"></app-collegue>
+  </div>
+
+<ngb-pagination [collectionSize]="listCollegue.length"  [pageSize]="2" [(page)]="page" size="lg"  [directionLinks]="true"></ngb-pagination>
+

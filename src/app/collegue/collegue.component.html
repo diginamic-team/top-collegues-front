@@ -1,0 +1,6 @@
+<img [src] = "col.photoUrl">
+
+<p>{{col.pseudo }}</p>
+<p>{{col.score | score}}</p> 
+<!-- <p> <img src="http://pluspng.com/img-png/png-coeur-rose-click-to-enlarge-479.png" height="20" width="20"></p> -->
+<app-avis (change)="check($event)" [like] = "like"  [dislike] ="dislike"></app-avis>

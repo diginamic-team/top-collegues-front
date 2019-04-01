@@ -1,0 +1,9 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Historiiiiiiic</a>
+</nav>
+<div *ngFor="let item of listeVotes">
+  <p>{{item.collegue.pseudo}}</p>
+  <p><img [src]="item.collegue.photoUrl" height="50" width="42"> {{item.collegue.pseudo}} est {{avis[item.avis] | lowercase}} son score : {{item.collegue.score}}</p>
+  <button (click)=delete(i) type="button" class="btn btn-warning">Remove le</button>
+  <!-- onclick()="item.collegue.pseudo.remove();" -->
+</div>
