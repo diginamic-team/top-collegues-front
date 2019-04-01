@@ -1,0 +1,20 @@
+
+<form [formGroup]="monForm" novalidate>
+  <div>
+  Matricule : <input type="text" formControlName="matricule">
+  <p *ngIf="matricule.dirty && matricule.invalid">
+    vous devez renseignez votre matricule.
+  </p>
+</div>
+<div>
+  Pseudo : <input type="text" formControlName="pseudo">
+  <p *ngIf="pseudo.dirty && pseudo.invalid">
+    votre pseudo n'est pas valide.
+  </p>
+</div>
+<div>
+  ImageUrl : <input type="text" formControlName="imageUrl">
+</div>
+  <button (click)="valider()">Valider</button>
+</form>
+

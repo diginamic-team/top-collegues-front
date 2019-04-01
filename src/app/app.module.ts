@@ -19,6 +19,7 @@ import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { PageDetailComponent } from './page-detail/page-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NouveauCollegueReactiveFormComponent } from './nouveau-collegue-reactive-form/nouveau-collegue-reactive-form.component';
 
 
 
@@ -36,7 +37,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CompteurVoteComponent,
     NouveauCollegueTemplateFormComponent,
     MenuComponentComponent,
-    PageDetailComponent
+    PageDetailComponent,
+    NouveauCollegueReactiveFormComponent
   ],
   imports: [
     BrowserModule,
