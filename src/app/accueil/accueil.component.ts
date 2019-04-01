@@ -2,6 +2,7 @@ import { Component, OnInit, Input, CollectionChangeRecord, OnDestroy } from '@an
 import { Collegue, Vote } from '../models';
 import { DataService } from '../services/data.service';
 import { Subscription } from 'rxjs';
+import { error } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-accueil',
@@ -33,7 +34,7 @@ export class AccueilComponent implements OnInit, OnDestroy {
       });
   }
 
-  //methode pour le bouton rafraichir
+  // methode pour le bouton rafraichir
   rafraichir() {
 
     this.actionSub = this.dataService.lister().subscribe(
@@ -47,7 +48,6 @@ export class AccueilComponent implements OnInit, OnDestroy {
 
       });
   }
-
 
   ngOnDestroy() {
     // désabonnement du composant avant sa destruction

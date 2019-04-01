@@ -3,8 +3,9 @@
     <div class="col-m">
       <div class="card; style= width: 18rem">
         <!-- syntax angular -->
-        <img class="card-img-top" [src]="col.photoUrl" />
-
+        <a routerLink="/collegue/{{col.pseudo}}">
+        <img class="card-img-top" [src]="col.photoUrl">
+      </a>
         <!-- syntax html -->
         <!-- <img src= {{col.photoUrl}}/>  -->
         <div>

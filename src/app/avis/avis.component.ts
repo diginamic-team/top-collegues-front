@@ -8,7 +8,7 @@ import { Avis } from '../models';
 })
 export class AvisComponent implements OnInit {
 
-  @Output() add : EventEmitter <Avis> = new EventEmitter<Avis> ();
+  @Output() add: EventEmitter<Avis> = new EventEmitter<Avis>();
   // @Input() checkScore : boolean;
 
   addLike() {

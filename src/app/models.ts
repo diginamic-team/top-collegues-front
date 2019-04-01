@@ -6,6 +6,18 @@ export interface Collegue {
 
 }
 
+export interface CollegueBD {
+
+  pseudo?: string;
+  score?: number;
+  photoUrl?: string;
+  nom?: string;
+  prenom?: string;
+  email?: string;
+  adresse?: string;
+
+}
+
 export interface NewCollegue {
 
   matricule?: string;
@@ -16,8 +28,8 @@ export interface NewCollegue {
 
 export enum Avis {
 
-  AIME="AIMER",
-  DETESTE="DETESTER",
+  AIME = "AIMER",
+  DETESTE = "DETESTER",
 }
 
 export const listeCollegue: Collegue[] = [

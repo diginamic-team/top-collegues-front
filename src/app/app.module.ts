@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
+import { DetailCollegueComponent } from './detail-collegue/detail-collegue.component';
 
 
 
@@ -35,7 +36,8 @@ import { ROUTES } from './app.routes';
     HistoriqueVotesComponent,
     CompteurVoteComponent,
     NouveauCollegueTemplateFormComponent,
-    MenuComponent
+    MenuComponent,
+    DetailCollegueComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

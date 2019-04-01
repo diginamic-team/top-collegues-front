@@ -1,17 +1,22 @@
 import { Injectable } from '@angular/core';
-import { Collegue, Avis, listeCollegue, Vote, NewCollegue } from '../models';
-import { Observable, of, Subject } from 'rxjs';
+import { Collegue, Avis, listeCollegue, Vote, NewCollegue, CollegueBD } from '../models';
+import { Observable, Subject } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { NOMEM } from 'dns';
 
 
-//convertion car pas les meme nommage des deux cotés
+// convertion car pas les meme nommage des deux cotés
 const collegueServeurToCollegueFront = colServeur => {
   return {
     pseudo: colServeur.pseudo,
     photoUrl: colServeur.imageUrl,
-    score: colServeur.score
+    score: colServeur.score,
+    prenom: colServeur.prenom,
+    nom: colServeur.nom,
+    email: colServeur.email,
+    adresse: colServeur.adresse,
   };
 };
 
@@ -42,10 +47,9 @@ export class DataService {
           (tabCollegueServeur: any[]) => tabCollegueServeur.map(collegueServeurToCollegueFront
           ))
       );
-  }
+  }s
 
   donnerUnAvis(collegue: Collegue, avis: Avis): Observable<Collegue> {
-
     return this._http.patch<any>(URL_BACKEND + 'collegues/' + collegue.pseudo,
       {
         action: avis
@@ -90,5 +94,12 @@ export class DataService {
   creerCollegue(newCollegue: NewCollegue): Observable<Collegue> {
     return this._http.post<Collegue>(URL_BACKEND + 'collegues/',
       newCollegue);
+  }
+  // GET /collegues?pseudo=XXX
+  afficherDetail(pseudo: string): Observable<CollegueBD> {
+    return this._http.get<CollegueBD>(URL_BACKEND + 'collegues?pseudo=' + pseudo)
+      .pipe(
+        map(collegueServeurToCollegueFront)
+      );
   }
 }
