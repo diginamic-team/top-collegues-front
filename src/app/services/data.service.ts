@@ -4,8 +4,6 @@ import { Observable, Subject } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { NOMEM } from 'dns';
-
 
 // convertion car pas les meme nommage des deux cotés
 const collegueServeurToCollegueFront = colServeur => {
