@@ -10,16 +10,23 @@ import { listeCollegues } from '../mock';
 })
 export class AccueilComponentComponent implements OnInit {
 
-  liste:Collegue[] = [];
+  liste: Collegue[] = [];
+  err = false;
+  message: string;
+  type: string;
+
   constructor(private _dataSrv: DataService) { }
 
   ngOnInit() {
     this._dataSrv.lister().subscribe
     (liste => this.liste = liste,
-      error => alert ("récupération de la liste fail" + error));
+      () => {this.type = 'warning',
+              this.message = `Fail de la récup des données`,
+                this.err = true;
+              });
   }
 
-  rafraichir(){
+  rafraichir() {
     this._dataSrv
       .lister()
       .subscribe(
@@ -30,5 +37,4 @@ export class AccueilComponentComponent implements OnInit {
           )
       );
   }
-
 }

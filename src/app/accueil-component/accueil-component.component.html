@@ -1,32 +1,25 @@
 <div class="text-right bouton-rafraichir">
-    <button (click) = rafraichir() class="btn btn-info">Rafraichir</button>
-  </div>
+  <button (click)=rafraichir() class="btn btn-info">Rafraichir</button>
+</div>
 
-  <div class='container-fluid'>
+<div class='container-fluid'>
   <div class="row justify-content-md-center titre">
 
     <h1>Liste des employés</h1>
 
   </div>
+  <div class="row justify-content-md-center titre">
+    <app-menu-component></app-menu-component>
+  </div>
 
 
-<div class="row justify-content-md-center">
+  <div class="row justify-content-md-center">
     <div class="col-10 ">
-  <app-liste-collegues-component [liste]="liste"></app-liste-collegues-component>
-</div>
+      <app-liste-collegues-component [liste]="liste"></app-liste-collegues-component>
+    </div>
 
-<div class="col-auto">
-    <app-historique-votes></app-historique-votes>
-  </div>
-  </div>
-
-<div class=" row justify-content-md-center">
-    <div class="col-4 ">
-  <app-nouveau-collegue-template-form></app-nouveau-collegue-template-form>
-  </div>
-  <div class="col-2">
-    <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/413/541/bdc.gif" alt="">
+    <div class="col-auto">
+      <app-historique-votes></app-historique-votes>
+    </div>
   </div>
 </div>
-</div>
-

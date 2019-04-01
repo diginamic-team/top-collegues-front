@@ -16,13 +16,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-template-form/nouveau-collegue-template-form.component';
 import { PseudoMatriculeValidatorDirective } from './validators/pseudo-matricule-validator.directive';
 import { FormsModule }   from '@angular/forms';
+import { MenuComponentComponent } from './menu-component/menu-component.component';
+import { RouterModule } from '@angular/router';
+import { ROUTES } from './app.routes';
+import { DescriptionComponent } from './description/description.component';
+
+
 
 @NgModule({
 
   declarations: [
-    AppComponent,  AvisComponent, CollegueComponent, ListeColleguesComponentComponent, AccueilComponentComponent, ScorePipe, HistoriqueVotesComponent, CompteurComponent, NouveauCollegueTemplateFormComponent, PseudoMatriculeValidatorDirective,
+    AppComponent,  AvisComponent, CollegueComponent, ListeColleguesComponentComponent, AccueilComponentComponent, ScorePipe, HistoriqueVotesComponent, CompteurComponent, NouveauCollegueTemplateFormComponent, PseudoMatriculeValidatorDirective, MenuComponentComponent, DescriptionComponent,
   ],
-  imports: [BrowserModule, NgbModule, HttpClientModule, FormsModule],
+  imports: [    BrowserModule,
+    NgbModule,
+    HttpClientModule,
+    FormsModule,
+    RouterModule.forRoot(ROUTES)],
   providers: [],
   bootstrap: [AppComponent]
 })

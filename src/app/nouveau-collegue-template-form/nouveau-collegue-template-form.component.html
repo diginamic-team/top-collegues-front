@@ -1,32 +1,53 @@
-<h1>Créer un nouvel employé</h1>
+<div class='container-fluid'>
 
-        <form (ngSubmit)="submit()"  [ngFormOptions]="{updateOn: 'blur'}" appPseudoMatriculeValidator #f="ngForm">
-          <div class="form-group">
-            <label>Matricule</label>
-            <input name="mat" [(ngModel)]="monFormulaire.matricule" class="form-control"  placeholder="Entrer un matricule" required #mat="ngModel">
-          </div>
-          <p class="alerte-formulaire" *ngIf="error && error.length>0">
-            Une personne avec ce pseudo existe dejà
-            </p>
+  <div class=" row justify-content-md-center">
+    <h1>Créer un nouvel employé</h1>
+  </div>
 
-          <div class="form-group">
-            <label>Pseudo</label>
-            <input name="pseudo" [(ngModel)]="monFormulaire.pseudo"  class="form-control"  placeholder="Entrer un pseudo" required minlength="2" #pseudo='ngModel'>
-          </div>
+  <div class="row justify-content-md-center">
+    <app-menu-component></app-menu-component>
+  </div>
 
-          <p class="alerte-formulaire" *ngIf="f.errors != null" {{f.errors.errorIdentique}} >
-            Un pseudo doit contenir au moins deux caractères
-          </p>
 
-          <div class="form-group">
-            <label>Image</label>
-            <input name="image" [(ngModel)]="monFormulaire.imageURL"  class="form-control"  placeholder="Entrer une image" required #image ='ngModel'>
-          </div>
+  <div class=" row justify-content-md-center">
+    <div class="col-4 ">
+      <form (ngSubmit)="submit()" [ngFormOptions]="{updateOn: 'blur'}" appPseudoMatriculeValidator #f="ngForm">
+        <div class="form-group">
+          <label>Matricule</label>
+          <input name="mat" [(ngModel)]="monFormulaire.matricule" class="form-control" placeholder="Entrer un matricule"
+            required #mat="ngModel">
+        </div>
+        <p class="alerte-formulaire" *ngIf="error && error.length>0">
+          Une personne avec ce pseudo existe dejà
+        </p>
 
-          <p class="alerte-formulaire" *ngIf="image.dirty && image.invalid">
-              Image requise
-            </p>
+        <div class="form-group">
+          <label>Pseudo</label>
+          <input name="pseudo" [(ngModel)]="monFormulaire.pseudo" class="form-control" placeholder="Entrer un pseudo"
+            required minlength="2" #pseudo='ngModel'>
+        </div>
 
-          <button type="submit" class="btn btn-primary" [disabled]="mat.invalid || pseudo.invalid">Ajouter</button>
+        <p class="alerte-formulaire" *ngIf="f.errors != null" {{f.errors.errorIdentique}}>
+          Un pseudo doit contenir au moins deux caractères
+        </p>
 
-        </form>
+        <div class="form-group">
+          <label>Image</label>
+          <input name="image" [(ngModel)]="monFormulaire.imageURL" class="form-control" placeholder="Entrer une image"
+            required #image='ngModel'>
+        </div>
+
+        <p class="alerte-formulaire" *ngIf="image.dirty && image.invalid">
+          Image requise
+        </p>
+
+        <button type="submit" class="btn btn-primary" [disabled]="mat.invalid || pseudo.invalid">Ajouter</button>
+
+      </form>
+
+    </div>
+    <div class="col-2">
+      <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/413/541/bdc.gif" alt="">
+    </div>
+  </div>
+</div>

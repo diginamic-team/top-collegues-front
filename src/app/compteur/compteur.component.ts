@@ -34,6 +34,7 @@ export class CompteurComponent implements OnInit {
     } else {
       this.compteur = 0;
     }
+
   }
 
 }
