@@ -1,3 +1,13 @@
-<p>
-  page-detail works!
-</p>
+<img [src]="collegue.imageUrl" class="img-fluid">
+<!--<img src="{{col.imageUrl}}">-->
+<div>
+<p>{{collegue.pseudo |  uppercase}}</p>
+</div>
+<p>{{collegue.score | score}}</p>
+
+<p>Nom : {{collegue.nom}}</p>
+<p>Prenom : {{collegue.prenom}}</p>
+<p>Email : {{collegue.email}}</p>
+<p>Adresse : {{collegue.adresse}}</p>
+
+<app-avis (avis)="traiterAvis($event)"></app-avis>

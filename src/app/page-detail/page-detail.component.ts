@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { DataService } from '../services/data.service';
+import { Collegue, Avis } from '../models';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-page-detail',
@@ -8,11 +11,12 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class PageDetailComponent implements OnInit {
 
-
+  collegue: Collegue = {};
   pseudo: string ;
+  actionSub: Subscription ;
 
-  constructor(private _route: ActivatedRoute) {
-    this.pseudo = _route.snapshot.paramMap.get('pseudo');
+  constructor(private _route: ActivatedRoute, private _service: DataService) {
+
    }
 
   ngOnInit() {
@@ -20,8 +24,24 @@ export class PageDetailComponent implements OnInit {
     this._route.paramMap.subscribe((params: ParamMap) => {
       // récupération du paramètre id
        const pseudo = params.get('pseudo');
+       console.log(pseudo);
+       this._service.envoyerPseudo(pseudo).subscribe(
+        value => this.collegue = value ,
+        error => console.log(error),
+      );
 
    });
   }
 
+  traiterAvis(unAvis: Avis){
+
+    this.actionSub = this._service.donnerUnAvis(this.collegue, unAvis).subscribe(
+      (data: Collegue) => {
+        this.collegue.score = data.score ;
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
 }

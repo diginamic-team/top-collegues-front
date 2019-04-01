@@ -17,7 +17,7 @@
 
           <div class="form-group">
             <label>URL image</label>
-            <input class="form-control" [(ngModel)]="nouveauCollegue.imageUrl" name="imageUrl">
+            <input class="form-control" [(ngModel)]="nouveauCollegue.imageUrl" name="imageUrl" #imageUrl="ngModel">
           </div>
             <button type="submit" [disabled]="!monForm.valid">Ajouter</button>
             <p *ngIf="erreur && erreur.length>0">

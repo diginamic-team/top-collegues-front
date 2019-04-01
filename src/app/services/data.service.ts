@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Collegue, Avis, Vote, NouveauCollegue } from '../models';
-import { Observable, of, Subject } from 'rxjs';
+import { Observable, of, Subject, ReplaySubject } from 'rxjs';
 import {environment} from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {tap} from 'rxjs/operators';
@@ -101,6 +101,10 @@ export class DataService {
 
   creerCollegue(nouveauCollegue: NouveauCollegue): Observable<Collegue> {
     return this._http.post<Collegue>(URL_BACKEND + '/collegues', nouveauCollegue);
+  }
+
+  envoyerPseudo(pseudo: string){
+    return this._http.get<Collegue>(URL_BACKEND + '/collegues/'+ pseudo);
   }
 
 }

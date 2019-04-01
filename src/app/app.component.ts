@@ -8,11 +8,11 @@ import { Collegue } from './models';
 })
 export class AppComponent {
   title = 'top-collegues-front';
-  unCollegueDemo: Collegue={
+  /*unCollegueDemo: Collegue={
     pseudo : 'rod',
     score :2000,
     imageUrl: "https://static1.squarespace.com/static/528b9077e4b076ee0b892f2f/t/579ce7ab5016e10ca2a21547/1469900728497/border-collie-close-up?format=750w"
-  }
+  }*/
 
 
 }
