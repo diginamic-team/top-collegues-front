@@ -1,0 +1,30 @@
+
+  <div class="card">
+      <div class="card-header" style="background-color: rgb(0,191,255); color: white">
+          <h4>Historique des votes</h4>
+      </div>
+      <div class="card-body">
+          <ul class="list-unstyled">
+              <li class="media mb-3" *ngFor="let v of votes; let i = index">
+                <img class="mr-3 mb-3" [src]="v.collegue.imageUrl" width="175" alt="Generic placeholder image">
+                  <div class="media-body">
+
+                       <h5 class="mt-0 mb-1" >{{v.collegue.pseudo |  uppercase}}</h5>
+                        <p>
+                            {{v.collegue.pseudo}}{{v.avis | historique}}{{v.collegue.score}}
+
+                        </p>
+
+                       <button type="button" class="btn btn-danger" (click)="supprimer(i)">Supprimer</button>
+
+                        </div>
+
+
+              </li>
+            </ul>
+      </div>
+    </div>
+
+
+
+
