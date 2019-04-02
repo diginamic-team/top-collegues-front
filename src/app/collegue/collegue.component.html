@@ -1,0 +1,18 @@
+<div class="border justify-content-md-center perso">
+
+  <div class="">
+    <h1>{{col.pseudo}} </h1>
+  </div>
+
+<div class="mx-auto" >
+<img class="image-pseudo img-fluid" [src]='col.imageURL' (click)="display(col.pseudo)">
+</div>
+
+  <div id="score">
+    <h4>{{col.score | score }}</h4>
+    <img id="picto-coeur" src="https://www.parentepuise.com/wp-content/uploads/2017/03/picto-coeur.svg" alt="">
+  </div>
+
+    <app-avis style="text-align: center" (avisEmis)="traiterAvisEmis($event)"></app-avis>
+
+</div>

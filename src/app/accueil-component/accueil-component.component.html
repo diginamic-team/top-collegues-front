@@ -1,0 +1,25 @@
+<div class="text-right bouton-rafraichir">
+  <button (click)=rafraichir() class="btn btn-info">Rafraichir</button>
+</div>
+
+<div class='container-fluid'>
+  <div class="row justify-content-md-center titre">
+
+    <h1>Liste des employés</h1>
+
+  </div>
+  <div class="row justify-content-md-center titre">
+    <app-menu-component></app-menu-component>
+  </div>
+
+
+  <div class="row justify-content-md-center">
+    <div class="col-10 ">
+      <app-liste-collegues-component [liste]="liste"></app-liste-collegues-component>
+    </div>
+
+    <div class="col-auto">
+      <app-historique-votes></app-historique-votes>
+    </div>
+  </div>
+</div>
