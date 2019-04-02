@@ -1,0 +1,26 @@
+<h1>Formulaire piloté par le template</h1>
+<div class="row">
+<form (ngSubmit)="submit()" #createCollegue="ngForm">
+
+    <label>Pseudo : </label>
+    <input [(ngModel)]="collegueForm.pseudo" #champPseudo="ngModel" name="pseudo" required minlength="3" maxlength="20">
+    <p *ngIf="champPseudo.invalid && champPseudo.dirty">
+      Le pseudo doit contenir au moins 3 caractères.
+  </p>
+    <label>Matricule : </label>
+    <input [(ngModel)]="collegueForm.matricule" #champMatricule="ngModel" name="matricule" required>
+    <p *ngIf="champMatricule.invalid">
+      Le champ 1 est invalide.
+
+  </p>
+    <label>Photo : </label>
+    <input [(ngModel)]="collegueForm.photo" name="photo">
+
+    <button class="btn btn-primary" type="submit" [disabled]="createCollegue.invalid">Submit </button>.
+    <p *ngIf="createCollegue.invalid">
+      Au moins un champ du formulaire est invalide.
+   </p>
+   <p *ngIf="messageErreur != ''">
+    {{messageErreur}}  </p>
+</form>`
+</div>

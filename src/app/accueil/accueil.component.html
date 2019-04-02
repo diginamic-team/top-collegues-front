@@ -1,0 +1,11 @@
+<div class="row ">
+  <button type="button" class="btn btn-success w-10" (click)="reload()">Reload</button>
+  <div class="w-50">
+    <app-newcompteur></app-newcompteur>
+  </div>
+  <div class="w-100"></div>
+
+  <app-liste-collegues [listeCol]='listeDeCollegue' class="col-8"></app-liste-collegues>
+
+  <app-historique-votes class="col-4 d-flex p-1"></app-historique-votes>
+</div>
