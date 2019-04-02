@@ -1,0 +1,29 @@
+<button type="button" class="btn btn-secondary" (click)=rafraichir()>Rafraichir la liste</button>
+<app-compteur-votes></app-compteur-votes>
+<p *ngIf="err">
+  <ngb-alert [type]="type" (close)="close()">{{ message }}</ngb-alert>
+</p>
+<div class="row mtop50">
+  <div class="col-md-8 col-xs-12">
+    <app-liste-collegues [listCollegue]="listCollegues"></app-liste-collegues>
+  </div>
+
+  <div class="col-md-3 offset-md-1 col-xs-12">
+    <app-historique-votes></app-historique-votes>
+  </div>
+</div>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>One fine body&hellip;</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+

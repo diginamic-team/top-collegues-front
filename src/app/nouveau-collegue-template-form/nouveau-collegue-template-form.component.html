@@ -1,0 +1,19 @@
+<h1>Formulaire inscription nouveau collegue</h1>
+<form appPseudoMatriculeValidator (ngSubmit)="submit()" [ngFormOptions]="{updateOn: 'blur'}" #form="ngForm">
+
+
+<div class="form-group">
+  <label>Matricule</label><input class="form-control form-control-lg" type="text" [(ngModel)]="newCollegue.matricule" name="matricule" #mat="ngModel" required>
+</div>
+<p *ngIf="err || check(form.errors) ">
+  <ngb-alert [type]="type" [dismissible]="false">{{ message }}</ngb-alert>
+</p>
+<div class="form-group">
+  <label>Pseudo</label><input class="form-control form-control-lg" type="text" [(ngModel)]="newCollegue.pseudo" name="pseudo" #ps="ngModel" required minlength="3">
+</div>
+<div class="form-group">
+  <label>URL image</label><input class="form-control form-control-lg" type="text" [(ngModel)]="newCollegue.image" name="image" >
+</div>
+  <button type="submit" class="btn btn-secondary" [disabled]="form.invalid">Submit</button>
+</form>
+

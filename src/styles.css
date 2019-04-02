@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+.mtop50 {
+    margin-top: 50px;
+}
+
+ .pagination .page-link {
+
+    border-bottom-style: none !important;
+    background-color: #9c9292 !important;
+    color: black !important;
+}
